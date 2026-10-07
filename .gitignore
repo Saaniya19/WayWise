@@ -1,0 +1,10 @@
+# Xcode user-specific files
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# macOS
+.DS_Store
+
+# Secrets
+Secrets.xcconfig
