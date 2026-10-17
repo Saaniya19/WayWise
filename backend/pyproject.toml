@@ -1,0 +1,11 @@
+[project]
+name = "waywise"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi[standard]>=0.128.8",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.11.0",
+]
