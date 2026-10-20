@@ -1,0 +1,2305 @@
+HTTP status: 200
+Google API response: {
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T15:31:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T15:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:31 AM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:20 AM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T17:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T15:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:35 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:48 AM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "8291s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T15:41:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T15:30:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:41 AM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:30 AM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 18,
+              "staticDuration": "19s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100598,
+              "staticDuration": "5640s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.6447594,
+                        "longitude": -79.380419899999993
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T17:38:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.455740999999996,
+                        "longitude": -80.49320689999999
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T16:04:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:38 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "12:04 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Toronto",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Via Rail Canada Inc",
+                      "phoneNumber": "+1 888 VIA-RAIL",
+                      "uri": "http://www.viarail.ca/"
+                    }
+                  ],
+                  "name": "Toronto - Sarnia",
+                  "color": "#f2c106",
+                  "nameShort": "VIA Rail",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 84,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105909,
+      "duration": "7914s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T18:31:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T18:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "2:31 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "2:20 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T20:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T18:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "4:35 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "2:48 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "8291s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T19:21:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T19:10:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "3:21 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "3:10 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "5640s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T21:17:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T19:43:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "5:17 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "3:43 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO - Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 6
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "7811s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T00:31:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "8:31 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:20 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T02:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "10:35 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:48 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "8291s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 47,
+              "staticDuration": "49s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 84,
+              "staticDuration": "69s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 159,
+              "staticDuration": "134s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 38,
+              "staticDuration": "32s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 841,
+              "staticDuration": "693s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 14,
+              "staticDuration": "11s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4336,
+              "staticDuration": "720s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4556359,
+                        "longitude": -80.4931737
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T00:30:00Z",
+                  "departureStop": {
+                    "name": "University Ave. / Wilfrid Laurier University",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.475114100000006,
+                        "longitude": -80.5274913
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:18:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "8:30 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:18 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Hwy. Bus Term",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener / Vaughan",
+                  "color": "#00853e",
+                  "nameShort": "30",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 2
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 6,
+              "staticDuration": "7s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T02:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "10:35 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:48 PM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 106288,
+      "duration": "9256s"
+    }
+  ]
+}
+
+{
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T15:31:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T15:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:31\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:20\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T17:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T15:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:48\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "8291s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T15:41:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T15:30:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:41\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:30\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 18,
+              "staticDuration": "19s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100598,
+              "staticDuration": "5640s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.6447594,
+                        "longitude": -79.38041989999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T17:38:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.455740999999996,
+                        "longitude": -80.49320689999999
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T16:04:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:38\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "12:04\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Toronto",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Via Rail Canada Inc",
+                      "phoneNumber": "+1 888 VIA-RAIL",
+                      "uri": "http://www.viarail.ca/"
+                    }
+                  ],
+                  "name": "Toronto - Sarnia",
+                  "color": "#f2c106",
+                  "nameShort": "VIA Rail",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 84,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105909,
+      "duration": "7914s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T18:31:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T18:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "2:31\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "2:20\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T20:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T18:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "4:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "2:48\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "8291s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T19:21:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T19:10:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "3:21\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "3:10\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "5640s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-21T21:17:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-21T19:43:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "5:17\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "3:43\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO - Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 6
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "7811s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 33,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 110,
+              "staticDuration": "90s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4285,
+              "staticDuration": "700s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Central Station Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.453049,
+                        "longitude": -80.4990655
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T00:31:40Z",
+                  "departureStop": {
+                    "name": "University Of Waterloo Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.473413,
+                        "longitude": -80.541297
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "8:31\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:20\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "301 Fairway",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION light rail",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "color": "#006bb7",
+                  "nameShort": "301",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Light rail"
+                    },
+                    "type": "TRAM",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/tram2.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "10s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 90,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 454,
+              "staticDuration": "409s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "114s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T02:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "10:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:48\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 105920,
+      "duration": "8291s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 47,
+              "staticDuration": "49s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 84,
+              "staticDuration": "69s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 159,
+              "staticDuration": "134s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 38,
+              "staticDuration": "32s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 841,
+              "staticDuration": "693s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 14,
+              "staticDuration": "11s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 4336,
+              "staticDuration": "720s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4556359,
+                        "longitude": -80.4931737
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T00:30:00Z",
+                  "departureStop": {
+                    "name": "University Ave. / Wilfrid Laurier University",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.475114100000006,
+                        "longitude": -80.5274913
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:18:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "8:30\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:18\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Hwy. Bus Term",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener / Vaughan",
+                  "color": "#00853e",
+                  "nameShort": "30",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 2
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 6,
+              "staticDuration": "7s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-10-22T02:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-10-22T00:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "10:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "8:48\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 41,
+              "staticDuration": "42s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 106288,
+      "duration": "9256s"
+    }
+  ]
+}
+
+Number of routes: 6
+
