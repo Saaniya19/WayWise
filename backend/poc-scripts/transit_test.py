@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 # 1. Google Routes API endpoint
-URL = "https://routes.googleapis.com/directions/v2:computeRoutes"
+GOOGLE_ROUTES_URL = "https://routes.googleapis.com/directions/v2:computeRoutes"
 
 # 2. Retrieve your API key
 API_KEY = os.environ["GOOGLE_MAPS_API_KEY"]
