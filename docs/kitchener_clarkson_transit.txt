@@ -1,0 +1,2386 @@
+HTTP status: 200
+{
+  "routes": [
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 22,
+              "staticDuration": "18s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "50s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "64s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 182,
+              "staticDuration": "150s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 74,
+              "staticDuration": "66s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 60,
+              "staticDuration": "47s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 776,
+              "staticDuration": "604s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 636,
+              "staticDuration": "520s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 81,
+              "staticDuration": "87s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 3775,
+              "staticDuration": "660s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Westmount / Queens",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.433305,
+                        "longitude": -80.50988
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:10:00Z",
+                  "departureStop": {
+                    "name": "Fischer-Hallman / Bleams",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.402251,
+                        "longitude": -80.496634
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T15:59:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:10\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "10:59\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "University/King",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Westmount",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "12",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 10
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 40,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 24,
+              "staticDuration": "20s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 62,
+              "staticDuration": "53s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 57,
+              "staticDuration": "51s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 3891,
+              "staticDuration": "600s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Frederick / Weber",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4510623,
+                        "longitude": -80.48618750000001
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:31:00Z",
+                  "departureStop": {
+                    "name": "Westmount / Queens (Temporary Stop)",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.434,
+                        "longitude": -80.51016500000001
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:21:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:31\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:21\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Fairway Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Queen-River",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "1",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 10
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "26s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 730,
+              "staticDuration": "605s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 21,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "113s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T18:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:48\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 26824,
+              "staticDuration": "2100s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Clarkson GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.51313,
+                        "longitude": -79.63320999999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T19:22:00Z",
+                  "departureStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T18:47:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "2:22\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "1:47\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Union Station GO West Harbour GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Lakeshore West Line",
+                  "color": "#98002e",
+                  "nameShort": "LW",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "57s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 27,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 140,
+              "staticDuration": "120s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 194,
+              "staticDuration": "185s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 29,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 138840,
+      "duration": "14343s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 198,
+              "staticDuration": "156s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 74,
+              "staticDuration": "60s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 282,
+              "staticDuration": "230s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 424,
+              "staticDuration": "346s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 81,
+              "staticDuration": "63s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 6783,
+              "staticDuration": "1020s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Block Line Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4232283,
+                        "longitude": -80.4630277
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:11:00Z",
+                  "departureStop": {
+                    "name": "Woodbine / Parkvale",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.388616000000006,
+                        "longitude": -80.48571
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T15:54:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:11\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "10:54\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Block Line Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Huron",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "33",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 17
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 72,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 5345,
+              "staticDuration": "960s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Victoria / Duke",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.454349,
+                        "longitude": -80.49495499999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:39:00Z",
+                  "departureStop": {
+                    "name": "Block Line Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4227494,
+                        "longitude": -80.4624066
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:23:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:39\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:23\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Conestoga Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Bridge-Courtland",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "6",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 14
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 8,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 124,
+              "staticDuration": "126s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "113s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T18:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:48\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 26824,
+              "staticDuration": "2100s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Clarkson GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.51313,
+                        "longitude": -79.63320999999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T19:22:00Z",
+                  "departureStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T18:47:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "2:22\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "1:47\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Union Station GO West Harbour GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Lakeshore West Line",
+                  "color": "#98002e",
+                  "nameShort": "LW",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "57s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 27,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 140,
+              "staticDuration": "120s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 194,
+              "staticDuration": "185s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 29,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 141498,
+      "duration": "13816s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 22,
+              "staticDuration": "18s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "50s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "64s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 182,
+              "staticDuration": "150s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 74,
+              "staticDuration": "66s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 60,
+              "staticDuration": "47s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 776,
+              "staticDuration": "604s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 636,
+              "staticDuration": "520s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 81,
+              "staticDuration": "87s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 3775,
+              "staticDuration": "660s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Westmount / Queens",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.433305,
+                        "longitude": -80.50988
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:40:00Z",
+                  "departureStop": {
+                    "name": "Fischer-Hallman / Bleams",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.402251,
+                        "longitude": -80.496634
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:29:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:40\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:29\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "University/King",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Westmount",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "12",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 10
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 40,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 24,
+              "staticDuration": "20s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 62,
+              "staticDuration": "53s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 57,
+              "staticDuration": "51s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 3891,
+              "staticDuration": "600s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Frederick / Weber",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4510623,
+                        "longitude": -80.48618750000001
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T17:01:00Z",
+                  "departureStop": {
+                    "name": "Westmount / Queens (Temporary Stop)",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.434,
+                        "longitude": -80.51016500000001
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:51:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "12:01\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:51\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Fairway Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Queen-River",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "1",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 10
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 30,
+              "staticDuration": "26s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 730,
+              "staticDuration": "605s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 21,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "113s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 18,
+              "staticDuration": "19s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100598,
+              "staticDuration": "5640s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.6447594,
+                        "longitude": -79.38041989999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T18:54:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.455740999999996,
+                        "longitude": -80.49320689999999
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T17:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:54\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "12:20\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Toronto",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Via Rail Canada Inc",
+                      "phoneNumber": "+1 888 VIA-RAIL",
+                      "uri": "http://www.viarail.ca/"
+                    }
+                  ],
+                  "name": "Toronto - Sarnia",
+                  "color": "#f2c106",
+                  "nameShort": "VIA Rail",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png"
+                  }
+                },
+                "stopCount": 4
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 51,
+              "staticDuration": "52s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 26824,
+              "staticDuration": "2100s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Clarkson GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.51313,
+                        "longitude": -79.63320999999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T19:52:00Z",
+                  "departureStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T19:17:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "2:52\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "2:17\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Union Station GO - Aldershot GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Lakeshore West Line",
+                  "color": "#98002e",
+                  "nameShort": "LW",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "57s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 27,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 140,
+              "staticDuration": "120s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 194,
+              "staticDuration": "185s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 29,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 138837,
+      "duration": "14343s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 22,
+              "staticDuration": "18s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "50s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "64s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 182,
+              "staticDuration": "150s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 74,
+              "staticDuration": "66s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 60,
+              "staticDuration": "47s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 776,
+              "staticDuration": "604s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 636,
+              "staticDuration": "520s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 107,
+              "staticDuration": "110s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 6196,
+              "staticDuration": "780s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Fairway Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.421803000000004,
+                        "longitude": -80.44178099999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T14:15:00Z",
+                  "departureStop": {
+                    "name": "Fischer-Hallman / Bleams",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.402431,
+                        "longitude": -80.496903
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T14:02:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "9:15\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "9:02\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Fairway Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Westmount",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "12",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 13
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "51s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 16,
+              "staticDuration": "13s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 8,
+              "staticDuration": "8s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 55,
+              "staticDuration": "46s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 12167,
+              "staticDuration": "1080s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Pinebush Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.407581,
+                        "longitude": -80.32818499999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T14:48:00Z",
+                  "departureStop": {
+                    "name": "Fairway Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.422366,
+                        "longitude": -80.44212999999999
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T14:30:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "9:48\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "9:30\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Ainslie Terminal",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION Bus",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "302",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 2
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 38,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 19,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 109,
+              "staticDuration": "131s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 19104,
+              "staticDuration": "1080s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Brock Rd. @ McLean Rd. (Aberfoyle) Park & Ride",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4609909,
+                        "longitude": -80.133667
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T15:18:00Z",
+                  "departureStop": {
+                    "name": "Hespeler Rd. @ Pinebush Rd.",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4089508,
+                        "longitude": -80.3281174
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T15:00:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "10:18\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "10:00\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Square One",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Waterloo / Mississauga",
+                  "color": "#f27e25",
+                  "nameShort": "25",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 1
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 31216,
+              "staticDuration": "1800s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Aldershot GO Bus",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.313036,
+                        "longitude": -79.855903
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:50:00Z",
+                  "departureStop": {
+                    "name": "Brock Rd. @ McLean Rd. (Aberfoyle) Park & Ride",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4609909,
+                        "longitude": -80.133667
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:50\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:20\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Hamilton GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Waterloo / Hamilton",
+                  "color": "#f27e24",
+                  "nameShort": "17",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 1
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 173,
+              "staticDuration": "147s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 112,
+              "staticDuration": "88s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 59,
+              "staticDuration": "46s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 25,
+              "staticDuration": "22s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "111s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 28837,
+              "staticDuration": "1920s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Clarkson GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.51313,
+                        "longitude": -79.63320999999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T17:38:00Z",
+                  "departureStop": {
+                    "name": "Aldershot",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.3129311,
+                        "longitude": -79.8551478
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T17:06:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "12:38\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "12:06\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Aldershot GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Lakeshore West Line",
+                  "color": "#98002e",
+                  "nameShort": "LW",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 5
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "57s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 27,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 140,
+              "staticDuration": "120s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 194,
+              "staticDuration": "185s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 29,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 100869,
+      "duration": "15146s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 22,
+              "staticDuration": "18s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "50s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "64s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 182,
+              "staticDuration": "150s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 74,
+              "staticDuration": "66s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 91,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 60,
+              "staticDuration": "47s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 776,
+              "staticDuration": "604s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 636,
+              "staticDuration": "520s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 107,
+              "staticDuration": "110s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 6196,
+              "staticDuration": "780s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Fairway Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.421803000000004,
+                        "longitude": -80.44178099999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T14:15:00Z",
+                  "departureStop": {
+                    "name": "Fischer-Hallman / Bleams",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.402431,
+                        "longitude": -80.496903
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T14:02:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "9:15\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "9:02\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Fairway Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Westmount",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "12",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 13
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 63,
+              "staticDuration": "51s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 16,
+              "staticDuration": "13s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 8,
+              "staticDuration": "8s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 55,
+              "staticDuration": "46s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 12167,
+              "staticDuration": "1080s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Pinebush Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.407581,
+                        "longitude": -80.32818499999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T14:48:00Z",
+                  "departureStop": {
+                    "name": "Fairway Station - Southbound",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.422366,
+                        "longitude": -80.44212999999999
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T14:30:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "9:48\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "9:30\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Ainslie Terminal",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "ION Bus",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "302",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 2
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 38,
+              "staticDuration": "31s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 19,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 109,
+              "staticDuration": "131s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 65213,
+              "staticDuration": "3420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Winston Churchill Transitway Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.541755699999996,
+                        "longitude": -79.7129898
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T15:57:00Z",
+                  "departureStop": {
+                    "name": "Hespeler Rd. @ Pinebush Rd.",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4089508,
+                        "longitude": -80.3281174
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T15:00:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "10:57\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "10:00\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Square One",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Waterloo / Mississauga",
+                  "color": "#f27e25",
+                  "nameShort": "25",
+                  "textColor": "#000000",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 3
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 107,
+              "staticDuration": "91s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 25,
+              "staticDuration": "23s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 115,
+              "staticDuration": "91s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 114,
+              "staticDuration": "85s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 67,
+              "staticDuration": "56s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 12429,
+              "staticDuration": "1740s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Clarkson GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.512676,
+                        "longitude": -79.633256
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T16:49:00Z",
+                  "departureStop": {
+                    "name": "Winston Churchill Station East Platform 5",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.542356,
+                        "longitude": -79.71164399999999
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T16:20:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "11:49\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "11:20\u202fAM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "45 S Winston Churchill To Clarkson Go",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "MiWay",
+                      "phoneNumber": "+1 905-615-4636",
+                      "uri": "http://www.miway.ca/"
+                    }
+                  ],
+                  "name": "Winston Churchill",
+                  "color": "#d33517",
+                  "nameShort": "45",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 29
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 70,
+              "staticDuration": "60s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 98972,
+      "duration": "11845s"
+    },
+    {
+      "legs": [
+        {
+          "steps": [
+            {
+              "distanceMeters": 198,
+              "staticDuration": "156s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 74,
+              "staticDuration": "60s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 282,
+              "staticDuration": "230s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 424,
+              "staticDuration": "346s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 81,
+              "staticDuration": "63s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 6783,
+              "staticDuration": "1020s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Block Line Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4232283,
+                        "longitude": -80.4630277
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T18:41:00Z",
+                  "departureStop": {
+                    "name": "Woodbine / Parkvale",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.388616000000006,
+                        "longitude": -80.48571
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T18:24:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "1:41\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "1:24\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Block Line Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Huron",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "33",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 17
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 72,
+              "staticDuration": "72s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 5345,
+              "staticDuration": "960s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Victoria / Duke",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.454349,
+                        "longitude": -80.49495499999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T19:09:00Z",
+                  "departureStop": {
+                    "name": "Block Line Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.4227494,
+                        "longitude": -80.4624066
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T18:53:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "2:09\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "1:53\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Conestoga Station",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "Grand River Transit",
+                      "phoneNumber": "+1 519-585-7555",
+                      "uri": "http://www.grt.ca/"
+                    }
+                  ],
+                  "name": "Bridge-Courtland",
+                  "uri": "https://www.grt.ca/en/schedules-maps/schedules.aspx",
+                  "nameShort": "6",
+                  "vehicle": {
+                    "name": {
+                      "text": "Bus"
+                    },
+                    "type": "BUS",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png"
+                  }
+                },
+                "stopCount": 14
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 8,
+              "staticDuration": "6s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 124,
+              "staticDuration": "126s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 133,
+              "staticDuration": "113s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 11,
+              "staticDuration": "12s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 100659,
+              "staticDuration": "6420s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T21:35:00Z",
+                  "departureStop": {
+                    "name": "Kitchener GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.45569,
+                        "longitude": -80.49313
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T19:48:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "4:35\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "2:48\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Kitchener GO Union Station GO",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Kitchener line",
+                  "color": "#00853e",
+                  "nameShort": "KI",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 11
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 26824,
+              "staticDuration": "1500s",
+              "transitDetails": {
+                "stopDetails": {
+                  "arrivalStop": {
+                    "name": "Clarkson GO",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.51313,
+                        "longitude": -79.63320999999999
+                      }
+                    }
+                  },
+                  "arrivalTime": "2026-11-02T22:15:00Z",
+                  "departureStop": {
+                    "name": "Union Station",
+                    "location": {
+                      "latLng": {
+                        "latitude": 43.645199999999996,
+                        "longitude": -79.3806
+                      }
+                    }
+                  },
+                  "departureTime": "2026-11-02T21:50:00Z"
+                },
+                "localizedValues": {
+                  "arrivalTime": {
+                    "time": {
+                      "text": "5:15\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  },
+                  "departureTime": {
+                    "time": {
+                      "text": "4:50\u202fPM"
+                    },
+                    "timeZone": "America/Toronto"
+                  }
+                },
+                "headsign": "Union Station GO - Hamilton GO Centre",
+                "transitLine": {
+                  "agencies": [
+                    {
+                      "name": "GO Transit",
+                      "phoneNumber": "+1 888-438-6646",
+                      "uri": "http://www.gotransit.com/"
+                    }
+                  ],
+                  "name": "Lakeshore West Line",
+                  "color": "#98002e",
+                  "nameShort": "LW",
+                  "textColor": "#ffffff",
+                  "vehicle": {
+                    "name": {
+                      "text": "Train"
+                    },
+                    "type": "HEAVY_RAIL",
+                    "iconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+                    "localIconUri": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+                  }
+                },
+                "stopCount": 1
+              },
+              "travelMode": "TRANSIT"
+            },
+            {
+              "distanceMeters": 58,
+              "staticDuration": "57s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 27,
+              "staticDuration": "35s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 140,
+              "staticDuration": "120s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 194,
+              "staticDuration": "185s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 29,
+              "staticDuration": "24s",
+              "travelMode": "WALK"
+            },
+            {
+              "distanceMeters": 32,
+              "staticDuration": "27s",
+              "travelMode": "WALK"
+            }
+          ]
+        }
+      ],
+      "distanceMeters": 141498,
+      "duration": "15196s"
+    }
+  ]
+}
+
+Number of routes: 6
