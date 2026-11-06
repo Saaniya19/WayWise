@@ -44,14 +44,16 @@ def parse_datetime(value: str | None) -> datetime | None:
 
 
 def parse_coordinates(data: dict | None) -> Coordinates | None:
-    """Parse a Google LatLng object or a Location containing latLng."""
-    if not data:
+    if data is None:
         return None
 
     lat_lng = data.get("latLng", data)
 
+    if not isinstance(lat_lng, dict):
+        raise ValueError("Invalid coordinate structure")
+
     if "latitude" not in lat_lng or "longitude" not in lat_lng:
-        return None
+        raise ValueError("Incomplete coordinates: latitude or longitude missing")
 
     return Coordinates(
         latitude=lat_lng["latitude"],

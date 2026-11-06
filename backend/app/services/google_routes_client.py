@@ -8,12 +8,7 @@ import requests
 
 from app.models.routing import Coordinates, RouteResult, TravelMode
 from app.services.google_routes_normalizer import normalize_routes
-
-
-GOOGLE_ROUTES_URL = (
-    "https://routes.googleapis.com/directions/v2:computeRoutes"
-)
-
+from app.config import GOOGLE_ROUTES_URL
 
 BASE_FIELDS = [
     "routes.duration",
@@ -48,6 +43,48 @@ class GoogleRoutesAuthenticationError(GoogleRoutesError):
     pass
 
 
+def _build_request_body(
+    origin: Coordinates,
+    destination: Coordinates,
+    mode: TravelMode,
+    departure_time: datetime | None = None,
+) -> dict:
+    body = {
+        "origin": {
+            "location": {
+                "latLng": {
+                    "latitude": origin.latitude,
+                    "longitude": origin.longitude,
+                }
+            }
+        },
+        "destination": {
+            "location": {
+                "latLng": {
+                    "latitude": destination.latitude,
+                    "longitude": destination.longitude,
+                }
+            }
+        },
+        "travelMode": mode.value,
+        "computeAlternativeRoutes": True,
+    }
+
+    if departure_time is not None:
+        if departure_time.tzinfo is None:
+            raise ValueError(
+                "departure_time must be timezone-aware"
+            )
+
+        body["departureTime"] = (
+            departure_time.astimezone(timezone.utc)
+            .isoformat()
+            .replace("+00:00", "Z")
+        )
+
+    return body
+
+
 def get_routes(
     origin: Coordinates,
     destination: Coordinates,
@@ -62,20 +99,9 @@ def get_routes(
             "GOOGLE_MAPS_API_KEY environment variable is missing"
         )
 
-    body = {
-        "origin": {
-            "location": {
-                "latLng": origin.model_dump()
-            }
-        },
-        "destination": {
-            "location": {
-                "latLng": destination.model_dump()
-            }
-        },
-        "travelMode": mode.value,
-        "computeAlternativeRoutes": True,
-    }
+    body = _build_request_body(
+        origin, destination, mode, departure_time
+    )
 
     if departure_time is not None:
         if departure_time.tzinfo is None:

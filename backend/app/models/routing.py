@@ -10,17 +10,15 @@ Segments contain optional TransitDetails
 from datetime import datetime
 from enum import Enum
 from pydantic import BaseModel, Field
+from app.models.common import Location
 
+
+Coordinates = Location
 
 class TravelMode(str, Enum):
     DRIVE = "DRIVE"
     WALK = "WALK"
     TRANSIT = "TRANSIT"
-
-
-class Coordinates(BaseModel):
-    latitude: float
-    longitude: float
 
 
 class TransitStop(BaseModel):
