@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Raw GTFS feeds are downloaded data; do not commit large archives.
+sources/source_gtfs_data/*
+!sources/source_gtfs_data/.gitkeep
+
+# Generated catalogue in stations/ is intentionally NOT ignored.
+# Decide with your team whether to version a snapshot after checking licences and size.

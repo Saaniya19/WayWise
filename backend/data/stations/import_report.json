@@ -1,0 +1,171 @@
+{
+  "created_at_utc": "2026-11-08T19:48:03.562481+00:00",
+  "sources": [
+    {
+      "source_id": "brampton",
+      "agency": "Brampton Transit",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/Brampton-GTFS",
+      "raw_stop_records": 2872,
+      "locations": 2784,
+      "formal_stations": 23,
+      "routes": 70,
+      "service_dates": {
+        "start": "20260907",
+        "end": "20261220",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://www.arcgis.com/home/item.html?id=a355aabd5a8c490186bdce559c9c75fb"
+    },
+    {
+      "source_id": "burlington",
+      "agency": "Burlington Transit",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/Burlington-GTFS",
+      "raw_stop_records": 787,
+      "locations": 787,
+      "formal_stations": 0,
+      "routes": 16,
+      "service_dates": {
+        "start": "20261101",
+        "end": "20261219",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://opendata.burlington.ca/gtfs-rt/"
+    },
+    {
+      "source_id": "drt",
+      "agency": "Durham Region Transit",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/DRT-GTFS",
+      "raw_stop_records": 1912,
+      "locations": 1912,
+      "formal_stations": 0,
+      "routes": 38,
+      "service_dates": {
+        "start": "20261106",
+        "end": "20261129",
+        "basis": "calendar.txt"
+      },
+      "source_page": "https://www.transit.land/data/feeds/f-dpz-durhamregiontransit"
+    },
+    {
+      "source_id": "go",
+      "agency": "GO Transit",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/GO-GTFS",
+      "raw_stop_records": 889,
+      "locations": 889,
+      "formal_stations": 0,
+      "routes": 45,
+      "service_dates": {
+        "start": "20261104",
+        "end": "20261127",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://www.gotransit.com/en/partner-with-us/software-developers"
+    },
+    {
+      "source_id": "milton",
+      "agency": "Milton Transit",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/Milton-GTFS",
+      "raw_stop_records": 417,
+      "locations": 417,
+      "formal_stations": 0,
+      "routes": 19,
+      "service_dates": {
+        "start": "20261101",
+        "end": "20270102",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://www.transit.land/data/feeds/f-milton~on~ca"
+    },
+    {
+      "source_id": "miway",
+      "agency": "MiWay",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/MiWay-GTFS",
+      "raw_stop_records": 4079,
+      "locations": 4071,
+      "formal_stations": 942,
+      "routes": 67,
+      "service_dates": {
+        "start": "20260922",
+        "end": "20261220",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://www.transit.land/data/feeds/f-dpz2-miway"
+    },
+    {
+      "source_id": "oakville",
+      "agency": "Oakville Transit",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/Oakville-GTFS",
+      "raw_stop_records": 1163,
+      "locations": 1163,
+      "formal_stations": 0,
+      "routes": 35,
+      "service_dates": {
+        "start": "20260906",
+        "end": "20261226",
+        "basis": "calendar.txt"
+      },
+      "source_page": "https://www.arcgis.com/home/item.html?id=d78a1c1ad6a940009de8b68839a8f606"
+    },
+    {
+      "source_id": "ttc",
+      "agency": "Toronto Transit Commission (TTC)",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/TTC-GTFS",
+      "raw_stop_records": 9357,
+      "locations": 9357,
+      "formal_stations": 0,
+      "routes": 237,
+      "service_dates": {
+        "start": "20261101",
+        "end": "20261221",
+        "basis": "calendar.txt"
+      },
+      "source_page": "https://open.toronto.ca/dataset/ttc-routes-and-schedules/"
+    },
+    {
+      "source_id": "up",
+      "agency": "UP Express",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/UP-GTFS",
+      "raw_stop_records": 5,
+      "locations": 5,
+      "formal_stations": 0,
+      "routes": 1,
+      "service_dates": {
+        "start": "20261030",
+        "end": "20270428",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://www.gotransit.com/en/partner-with-us/software-developers"
+    },
+    {
+      "source_id": "yrt",
+      "agency": "York Region Transit / VIVA",
+      "status": "ok",
+      "input": "/Users/paulinelee/Downloads/data/sources/source_gtfs_data/YRT-GTFS",
+      "raw_stop_records": 4827,
+      "locations": 4750,
+      "formal_stations": 18,
+      "routes": 125,
+      "service_dates": {
+        "start": "20261101",
+        "end": "20261219",
+        "basis": "feed_info.txt"
+      },
+      "source_page": "https://www.yrt.ca/en/about-us/open-data.aspx"
+    }
+  ],
+  "totals": {
+    "sources_ok": 10,
+    "locations": 26135,
+    "stop_records": 26308,
+    "formal_stations": 983
+  }
+}

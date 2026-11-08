@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WayWise GTFS source registry",
+  "description": "Optional validation for gtfs_sources.json. The Python scripts do not require a schema validator.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "folder", "archive", "download_method", "download_url", "source_page", "notes"],
+    "properties": {
+      "id": {"type": "string"},
+      "name": {"type": "string"},
+      "folder": {"type": "string"},
+      "archive": {"type": "string"},
+      "download_method": {"enum": ["direct", "manual"]},
+      "download_url": {"type": ["string", "null"]},
+      "source_page": {"type": "string"},
+      "notes": {"type": "string"}
+    }
+  }
+}

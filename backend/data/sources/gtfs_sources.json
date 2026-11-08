@@ -1,0 +1,102 @@
+[
+  {
+    "id": "brampton",
+    "name": "Brampton Transit",
+    "folder": "Brampton-GTFS",
+    "archive": "Brampton-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://www.arcgis.com/sharing/rest/content/items/a355aabd5a8c490186bdce559c9c75fb/data",
+    "source_page": "https://www.arcgis.com/home/item.html?id=a355aabd5a8c490186bdce559c9c75fb",
+    "notes": "Published feed may contain outdated service dates; import includes route/stop locations regardless of service period."
+  },
+  {
+    "id": "burlington",
+    "name": "Burlington Transit",
+    "folder": "Burlington-GTFS",
+    "archive": "Burlington-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://opendata.burlington.ca/gtfs-rt/GTFS_Data.zip",
+    "source_page": "https://opendata.burlington.ca/gtfs-rt/",
+    "notes": ""
+  },
+  {
+    "id": "drt",
+    "name": "Durham Region Transit",
+    "folder": "DRT-GTFS",
+    "archive": "DRT-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://maps.durham.ca/OpenDataGTFS/GTFS_Durham_TXT.zip",
+    "source_page": "https://www.transit.land/data/feeds/f-dpz-durhamregiontransit",
+    "notes": ""
+  },
+  {
+    "id": "go",
+    "name": "GO Transit",
+    "folder": "GO-GTFS",
+    "archive": "GO-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://assets.metrolinx.com/raw/upload/v1683228856/Documents/Metrolinx/Open%20Data/GO-GTFS.zip",
+    "source_page": "https://www.gotransit.com/en/partner-with-us/software-developers",
+    "notes": "By downloading the feed you accept the Metrolinx Access and Use Agreement on the source page."
+  },
+  {
+    "id": "milton",
+    "name": "Milton Transit",
+    "folder": "Milton-GTFS",
+    "archive": "Milton-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://metrolinx.tmix.se/gtfs/gtfs-milton.zip",
+    "source_page": "https://www.transit.land/data/feeds/f-milton~on~ca",
+    "notes": "Producer URL may redirect/change; see source page if download fails."
+  },
+  {
+    "id": "miway",
+    "name": "MiWay",
+    "folder": "MiWay-GTFS",
+    "archive": "MiWay-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://www.miapp.ca/GTFS/google_transit.zip",
+    "source_page": "https://www.transit.land/data/feeds/f-dpz2-miway",
+    "notes": ""
+  },
+  {
+    "id": "oakville",
+    "name": "Oakville Transit",
+    "folder": "Oakville-GTFS",
+    "archive": "Oakville-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://www.arcgis.com/sharing/rest/content/items/d78a1c1ad6a940009de8b68839a8f606/data",
+    "source_page": "https://www.arcgis.com/home/item.html?id=d78a1c1ad6a940009de8b68839a8f606",
+    "notes": ""
+  },
+  {
+    "id": "ttc",
+    "name": "Toronto Transit Commission (TTC)",
+    "folder": "TTC-GTFS",
+    "archive": "TTC-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/7795b45e-e65a-4465-81fc-c36b9dfff169/resource/cfb6b2b8-6191-41e3-bda1-b175c51148cb/download/TTC%20Routes%20and%20Schedules%20Data.zip",
+    "source_page": "https://open.toronto.ca/dataset/ttc-routes-and-schedules/",
+    "notes": "If download fails, use Toronto Open Data source page; archive URL may change."
+  },
+  {
+    "id": "up",
+    "name": "UP Express",
+    "folder": "UP-GTFS",
+    "archive": "UP-GTFS.zip",
+    "download_method": "direct",
+    "download_url": "https://assets.metrolinx.com/raw/upload/v1682367798/Documents/Metrolinx/Open%20Data/UP-GTFS.zip",
+    "source_page": "https://www.gotransit.com/en/partner-with-us/software-developers",
+    "notes": "By downloading the feed you accept the Metrolinx Access and Use Agreement on the source page."
+  },
+  {
+    "id": "yrt",
+    "name": "York Region Transit / VIVA",
+    "folder": "YRT-GTFS",
+    "archive": "YRT-GTFS.zip",
+    "download_method": "manual",
+    "download_url": null,
+    "source_page": "https://www.yrt.ca/en/about-us/open-data.aspx",
+    "notes": "Official YRT website requests licence acceptance and online form before download. Save result as sources/source_gtfs_data/YRT-GTFS.zip then rerun."
+  }
+]
