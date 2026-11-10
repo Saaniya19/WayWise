@@ -193,11 +193,6 @@ class Journey(BaseModel):
         hasWalking = any(s.kind == "WALK" for s in self.segments)
         hasTransit = transitRideCount > 0
 
-        if hasDriving and hasBiking:
-            raise ValueError(
-                "Combining DRIVE and BIKE is not supported in the MVP"
-            )
-
         if hasBiking:
             if hasTransit:
                 expectedType = (

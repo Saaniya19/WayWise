@@ -8,6 +8,7 @@ from app.models.journey import Journey
 
 
 class DrivingConstraint(BaseModel):
+    limitType: Literal["TIME", "DISTANCE"]
     model_config = ConfigDict(extra="forbid")
 
     maxInitialDrivingKm: float | None = Field(
