@@ -65,8 +65,7 @@ def build(go_path, up_path):
                 'stationId': station['id'],
                 'latitude': None, 'longitude': None,
                 'coordinatesStatus': 'not_verified',
-                'parkingType': 'free_customer', 'publishedSpaceCount': capacity,
-                'realTimeSpacesAvailable': None,
+                'parkingType': 'free_customer',
                 'source': {'type': 'official_station_page', 'url': facts['sourceUrl'], 'lastVerified': VERIFIED_ON},
             })
             candidates.append({

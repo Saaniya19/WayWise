@@ -43,8 +43,6 @@ class ParkingSite(Strict):
     longitude: float | None = Field(ge=-180, le=180)
     coordinatesStatus: Literal['not_verified', 'verified']
     parkingType: Literal['free_customer', 'paid', 'unknown']
-    publishedSpaceCount: int | None = Field(ge=0)
-    realTimeSpacesAvailable: int | None = Field(ge=0)
     source: Source
 
     @model_validator(mode='after')
@@ -54,6 +52,13 @@ class ParkingSite(Strict):
         return self
 
 class WalkingAccess(Strict):
+    """
+    Walking connection from a parking site's pedestrian
+    access point to its associated transit boarding stop.
+
+    distanceMeters is the walking-route distance, not
+    straight-line distance.
+    """
     distanceMeters: float = Field(ge=0)
     durationSeconds: float = Field(ge=0)
     source: Source

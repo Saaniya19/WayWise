@@ -1,8 +1,13 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
+from app.models.journey import Journey, JourneySegment
+from app.models.planning import TravelConstraints
+
 
 class ConstraintResult(BaseModel):
     isValid: bool
-    violations: list[str]
+    violations: list[str] = Field(default_factory=list)
+
 
 def checkConstraints(
     journey: Journey,
@@ -10,8 +15,116 @@ def checkConstraints(
 ) -> ConstraintResult:
     violations = []
 
-    # Check driving time/distance limits,
-    # walking limits, and other supported constraints.
+    # Walking limit applies to each walking segment.
+    if constraints.maxWalkingSegmentMinutes is not None:
+        maxSeconds = constraints.maxWalkingSegmentMinutes * 60
+
+        for segment in journey.segments:
+            if segment.kind == "WALK":
+                if segment.durationSeconds > maxSeconds:
+                    violations.append(
+                        f"Walking segment {segment.id} exceeds "
+                        f"{constraints.maxWalkingSegmentMinutes} minutes"
+                    )
+
+    # Biking limit applies to each biking segment.
+    if constraints.maxBikingSegmentMinutes is not None:
+        maxSeconds = constraints.maxBikingSegmentMinutes * 60
+
+        for segment in journey.segments:
+            if segment.kind == "BIKE":
+                if segment.durationSeconds > maxSeconds:
+                    violations.append(
+                        f"Biking segment {segment.id} exceeds "
+                        f"{constraints.maxBikingSegmentMinutes} minutes"
+                    )
+
+    # Maximum number of transit transfers.
+    if constraints.transit is not None:
+        if journey.transferCount > constraints.transit.maxTransfers:
+            violations.append(
+                f"Journey has {journey.transferCount} transfers; "
+                f"maximum is {constraints.transit.maxTransfers}"
+            )
+
+    # Initial/final driving constraints.
+    if constraints.driving is not None:
+        driving = constraints.driving
+
+        # Contiguous driving segments at the start of the journey.
+        initialDrive = []
+        for segment in journey.segments:
+            if segment.kind != "DRIVE":
+                break
+            initialDrive.append(segment)
+
+        # Contiguous driving segments at the end of the journey.
+        finalDrive = []
+        for segment in reversed(journey.segments):
+            if segment.kind != "DRIVE":
+                break
+            finalDrive.append(segment)
+
+        # Avoid counting a drive-only journey twice.
+        if len(initialDrive) == len(journey.segments):
+            finalDrive = []
+
+        def checkDrive(
+            segments: list[JourneySegment],
+            maxValue: float | int | None,
+            label: str
+        ):
+            if maxValue is None:
+                return
+
+            if driving.limitType == "TIME":
+                actual = sum(s.durationSeconds for s in segments)
+                if actual > maxValue:
+                    violations.append(
+                        f"{label} driving time exceeds "
+                        f"{maxValue} seconds"
+                    )
+
+            else:
+                if any(s.distanceMeters is None for s in segments):
+                    violations.append(
+                        f"{label} driving distance cannot be verified"
+                    )
+                    return
+
+                actualKm = sum(
+                    s.distanceMeters for s in segments
+                    if s.distanceMeters is not None
+                ) / 1000
+
+                if actualKm > maxValue:
+                    violations.append(
+                        f"{label} driving distance exceeds "
+                        f"{maxValue} km"
+                    )
+
+        if driving.limitType == "TIME":
+            checkDrive(
+                initialDrive,
+                driving.maxInitialDrivingSeconds,
+                "Initial"
+            )
+            checkDrive(
+                finalDrive,
+                driving.maxFinalDrivingSeconds,
+                "Final"
+            )
+        else:
+            checkDrive(
+                initialDrive,
+                driving.maxInitialDrivingKm,
+                "Initial"
+            )
+            checkDrive(
+                finalDrive,
+                driving.maxFinalDrivingKm,
+                "Final"
+            )
 
     return ConstraintResult(
         isValid=len(violations) == 0,
