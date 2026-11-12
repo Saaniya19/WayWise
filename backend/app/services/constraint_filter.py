@@ -4,6 +4,9 @@ from app.models.journey import Journey, JourneySegment
 from app.models.planning import TravelConstraints
 
 
+SEGMENT_TIME_TOLERANCE_SECONDS = 30
+
+
 class ConstraintResult(BaseModel):
     isValid: bool
     violations: list[str] = Field(default_factory=list)
@@ -15,29 +18,31 @@ def checkConstraints(
 ) -> ConstraintResult:
     violations = []
 
-    # Walking limit applies to each walking segment.
-    if constraints.maxWalkingSegmentMinutes is not None:
-        maxSeconds = constraints.maxWalkingSegmentMinutes * 60
+    # Walking and biking limits apply to each individual segment.
+    for segment in journey.segments:
+        if (
+            segment.kind == "WALK"
+            and constraints.maxWalkingSegmentMinutes is not None
+        ):
+            maxSeconds = constraints.maxWalkingSegmentMinutes * 60
 
-        for segment in journey.segments:
-            if segment.kind == "WALK":
-                if segment.durationSeconds > maxSeconds:
-                    violations.append(
-                        f"Walking segment {segment.id} exceeds "
-                        f"{constraints.maxWalkingSegmentMinutes} minutes"
-                    )
+            if segment.durationSeconds > maxSeconds + SEGMENT_TIME_TOLERANCE_SECONDS:
+                violations.append(
+                    f"Walking segment {segment.id} exceeds "
+                    f"{constraints.maxWalkingSegmentMinutes} minutes"
+                )
 
-    # Biking limit applies to each biking segment.
-    if constraints.maxBikingSegmentMinutes is not None:
-        maxSeconds = constraints.maxBikingSegmentMinutes * 60
+        elif (
+            segment.kind == "BIKE"
+            and constraints.maxBikingSegmentMinutes is not None
+        ):
+            maxSeconds = constraints.maxBikingSegmentMinutes * 60
 
-        for segment in journey.segments:
-            if segment.kind == "BIKE":
-                if segment.durationSeconds > maxSeconds:
-                    violations.append(
-                        f"Biking segment {segment.id} exceeds "
-                        f"{constraints.maxBikingSegmentMinutes} minutes"
-                    )
+            if segment.durationSeconds > maxSeconds + SEGMENT_TIME_TOLERANCE_SECONDS:
+                violations.append(
+                    f"Biking segment {segment.id} exceeds "
+                    f"{constraints.maxBikingSegmentMinutes} minutes"
+                )
 
     # Maximum number of transit transfers.
     if constraints.transit is not None:

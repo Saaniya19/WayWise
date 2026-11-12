@@ -25,6 +25,7 @@ from app.models.planning import (
 )
 def testValidDrivingConstraint(initial, final):
     constraint = DrivingConstraint(
+        limitType="DISTANCE",
         maxInitialDrivingKm=initial,
         maxFinalDrivingKm=final,
     )
@@ -68,6 +69,7 @@ def testValidTravelConstraints():
     constraints = TravelConstraints(
         maxWalkingSegmentMinutes=10,
         driving=DrivingConstraint(
+            limitType="DISTANCE",
             maxInitialDrivingKm=15,
             maxFinalDrivingKm=5,
         ),
@@ -127,6 +129,7 @@ def testValidPlanningRequest():
         constraints={
             "maxWalkingSegmentMinutes": 10,
             "driving": {
+                "limitType": "DISTANCE",
                 "maxInitialDrivingKm": 15,
                 "maxFinalDrivingKm": 5
             },
