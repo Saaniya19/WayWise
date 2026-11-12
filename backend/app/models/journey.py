@@ -9,9 +9,10 @@ from app.models.common import Location
 SegmentKind = Literal[
     "DRIVE",
     "WALK",
+    "BIKE",
     "TRANSIT",
     "WAIT",
-    "PARK"
+    "PARK",
 ]
 
 class TransitDetails(BaseModel):
@@ -103,7 +104,11 @@ JourneyType = Literal[
     "WALK_ONLY",
     "WALK_TRANSIT",
     "DRIVE_WALK",
-    "DRIVE_WALK_TRANSIT"
+    "DRIVE_WALK_TRANSIT",
+    "BIKE_ONLY",
+    "BIKE_WALK",
+    "BIKE_TRANSIT",
+    "BIKE_WALK_TRANSIT",
 ]
 
 
@@ -183,12 +188,20 @@ class Journey(BaseModel):
             )
 
         # Journey type should describe the modes actually used.
-        hasDriving = any(
-            segment.kind == "DRIVE" for segment in self.segments
-        )
+        hasDriving = any(s.kind == "DRIVE" for s in self.segments)
+        hasBiking = any(s.kind == "BIKE" for s in self.segments)
+        hasWalking = any(s.kind == "WALK" for s in self.segments)
         hasTransit = transitRideCount > 0
 
-        if hasDriving and hasTransit:
+        if hasBiking:
+            if hasTransit:
+                expectedType = (
+                    "BIKE_WALK_TRANSIT" if hasWalking else "BIKE_TRANSIT"
+                )
+            else:
+                expectedType = "BIKE_WALK" if hasWalking else "BIKE_ONLY"
+
+        elif hasDriving and hasTransit:
             expectedType = "DRIVE_WALK_TRANSIT"
         elif hasDriving:
             expectedType = "DRIVE_WALK"
@@ -196,7 +209,7 @@ class Journey(BaseModel):
             expectedType = "WALK_TRANSIT"
         else:
             expectedType = "WALK_ONLY"
-
+        
         if self.journeyType != expectedType:
             raise ValueError(
                 f"journeyType must be {expectedType}"

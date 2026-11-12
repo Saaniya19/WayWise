@@ -1607,8 +1607,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 46,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station/ac/station-details",
@@ -1623,8 +1621,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 1724,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station-or-stop/be/station-details",
@@ -1639,8 +1635,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 646,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station-or-stop/be/station-details",
@@ -1655,8 +1649,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 425,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station-or-stop/ge/station-details",
@@ -1671,8 +1663,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 223,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station-or-stop/ge/station-details",
@@ -1687,8 +1677,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 15,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station-or-stop/gl/station-details",
@@ -1703,8 +1691,6 @@
       "longitude": null,
       "coordinatesStatus": "not_verified",
       "parkingType": "free_customer",
-      "publishedSpaceCount": 1486,
-      "realTimeSpacesAvailable": null,
       "source": {
         "type": "official_station_page",
         "url": "https://www.gotransit.com/en/find-a-station-or-stop/mo/station-details",

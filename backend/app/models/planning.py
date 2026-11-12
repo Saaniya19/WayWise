@@ -1,14 +1,61 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, model_validator, ConfigDict
 
 from app.models.common import Location
 from app.models.journey import Journey
 
+
 class DrivingConstraint(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     limitType: Literal["TIME", "DISTANCE"]
-    maxValue: float = Field(gt=0, allow_inf_nan=False)
+
+    # Distance limits in kilometres
+    maxInitialDrivingKm: float | None = Field(
+        default=None, ge=0, allow_inf_nan=False
+    )
+    maxFinalDrivingKm: float | None = Field(
+        default=None, ge=0, allow_inf_nan=False
+    )
+
+    # Time limits in seconds
+    maxInitialDrivingSeconds: int | None = Field(
+        default=None, ge=0, strict=True
+    )
+    maxFinalDrivingSeconds: int | None = Field(
+        default=None, ge=0, strict=True
+    )
+
+    @model_validator(mode="after")
+    def validateDrivingLimit(self):
+        distanceFields = (
+            self.maxInitialDrivingKm,
+            self.maxFinalDrivingKm,
+        )
+        timeFields = (
+            self.maxInitialDrivingSeconds,
+            self.maxFinalDrivingSeconds,
+        )
+
+        if self.limitType == "TIME":
+            if any(value is not None for value in distanceFields):
+                raise ValueError(
+                    "TIME constraints cannot specify distance limits"
+                )
+            if all(value is None for value in timeFields):
+                raise ValueError("A driving time limit is required")
+
+        else:
+            if any(value is not None for value in timeFields):
+                raise ValueError(
+                    "DISTANCE constraints cannot specify time limits"
+                )
+            if all(value is None for value in distanceFields):
+                raise ValueError("A driving distance limit is required")
+
+        return self
 
 
 class TransitConstraint(BaseModel):
@@ -16,12 +63,14 @@ class TransitConstraint(BaseModel):
 
 
 class TravelConstraints(BaseModel):
-    maxWalkingSegmentMinutes: float = Field(
-        gt=0,
-        allow_inf_nan=False
+    maxWalkingSegmentMinutes: float | None = Field(
+        default=None, ge=0, allow_inf_nan=False
     )
-    driving: DrivingConstraint | None
-    transit: TransitConstraint | None
+    maxBikingSegmentMinutes: float | None = Field(
+        default=None, ge=0, allow_inf_nan=False
+    )
+    driving: DrivingConstraint | None = None
+    transit: TransitConstraint | None = None
 
 
 

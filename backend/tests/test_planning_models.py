@@ -15,20 +15,22 @@ from app.models.planning import (
 
 
 @pytest.mark.parametrize(
-    "limitType, maxValue",
+    "initial, final",
     [
-        ("TIME", 20),
-        ("DISTANCE", 15.5),
-    ]
+        (15, None),
+        (None, 5),
+        (15, 5),
+        (0, 0),
+    ],
 )
-def testValidDrivingConstraint(limitType, maxValue):
+def testValidDrivingConstraint(initial, final):
     constraint = DrivingConstraint(
-        limitType=limitType,
-        maxValue=maxValue
+        limitType="DISTANCE",
+        maxInitialDrivingKm=initial,
+        maxFinalDrivingKm=final,
     )
-
-    assert constraint.limitType == limitType
-    assert constraint.maxValue == maxValue
+    assert constraint.maxInitialDrivingKm == initial
+    assert constraint.maxFinalDrivingKm == final
 
 
 @pytest.mark.parametrize(
@@ -67,14 +69,16 @@ def testValidTravelConstraints():
     constraints = TravelConstraints(
         maxWalkingSegmentMinutes=10,
         driving=DrivingConstraint(
-            limitType="TIME",
-            maxValue=20
+            limitType="DISTANCE",
+            maxInitialDrivingKm=15,
+            maxFinalDrivingKm=5,
         ),
-        transit=TransitConstraint(maxTransfers=1)
+        transit=TransitConstraint(maxTransfers=1),
     )
 
     assert constraints.maxWalkingSegmentMinutes == 10
-    assert constraints.driving.limitType == "TIME"
+    assert constraints.driving.maxInitialDrivingKm == 15
+    assert constraints.driving.maxFinalDrivingKm == 5
     assert constraints.transit.maxTransfers == 1
 
 
@@ -91,20 +95,24 @@ def testWalkingOnlyConstraints():
 
 @pytest.mark.parametrize(
     "walkingMinutes",
-    [0, -5, float("inf"), float("nan")]
+    [-5, float("inf"), float("nan")],
 )
 def testInvalidWalkingLimit(walkingMinutes):
     with pytest.raises(ValidationError):
-        TravelConstraints(
-            maxWalkingSegmentMinutes=walkingMinutes,
-            driving=None,
-            transit=None
-        )
+        TravelConstraints(maxWalkingSegmentMinutes=walkingMinutes)
+        
+def testZeroWalkingLimit():
+    constraints = TravelConstraints(maxWalkingSegmentMinutes=0)
+    assert constraints.maxWalkingSegmentMinutes == 0
 
 
 def testMissingModeFields():
-    with pytest.raises(ValidationError):
-        TravelConstraints(maxWalkingSegmentMinutes=10)
+    constraints = TravelConstraints()
+
+    assert constraints.maxWalkingSegmentMinutes is None
+    assert constraints.maxBikingSegmentMinutes is None
+    assert constraints.driving is None
+    assert constraints.transit is None
 
 
 
@@ -121,8 +129,9 @@ def testValidPlanningRequest():
         constraints={
             "maxWalkingSegmentMinutes": 10,
             "driving": {
-                "limitType": "TIME",
-                "maxValue": 30
+                "limitType": "DISTANCE",
+                "maxInitialDrivingKm": 15,
+                "maxFinalDrivingKm": 5
             },
             "transit": {
                 "maxTransfers": 1
@@ -131,7 +140,8 @@ def testValidPlanningRequest():
     )
 
     assert request.origin.latitude == 43.4723
-    assert request.constraints.driving.maxValue == 30
+    assert request.constraints.driving.maxInitialDrivingKm == 15
+    assert request.constraints.driving.maxFinalDrivingKm == 5
 
     result = request.model_dump()
 
