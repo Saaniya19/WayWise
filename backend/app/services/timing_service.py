@@ -28,6 +28,6 @@ def checkConnection(
     )
 
     return ConnectionResult(
-        isFeasible=connectionSeconds >= 0,
+        isFeasible=connectionSeconds >= 60,
         connectionSeconds=connectionSeconds
     )
