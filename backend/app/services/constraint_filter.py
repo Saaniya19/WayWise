@@ -4,12 +4,50 @@ from app.models.journey import Journey, JourneySegment
 from app.models.planning import TravelConstraints
 
 
-SEGMENT_TIME_TOLERANCE_SECONDS = 30
+SEGMENT_TIME_TOLERANCE_SECONDS = 60
+DRIVING_TIME_TOLERANCE_SECONDS = 120
 
 
 class ConstraintResult(BaseModel):
     isValid: bool
     violations: list[str] = Field(default_factory=list)
+
+
+def checkDrive(
+    segments: list[JourneySegment],
+    maxValue: float | int | None,
+    label: str,
+    limitType: str,
+) -> list[str]:
+    violations = []
+
+    if maxValue is None or not segments:
+        return violations
+
+    if limitType == "TIME":
+        actual = sum(s.durationSeconds for s in segments)
+
+        if actual > maxValue + DRIVING_TIME_TOLERANCE_SECONDS:
+            violations.append(
+                f"{label} driving time exceeds {maxValue} seconds"
+            )
+
+    else:
+        if any(s.distanceMeters is None for s in segments):
+            violations.append(
+                f"{label} driving distance cannot be verified"
+            )
+            return violations
+
+        actualKm = sum(s.distanceMeters for s in segments) / 1000
+
+        if actualKm > maxValue:
+            violations.append(
+                f"{label} driving distance exceeds {maxValue} km"
+            )
+
+    return violations
+
 
 
 def checkConstraints(
@@ -74,62 +112,41 @@ def checkConstraints(
         if len(initialDrive) == len(journey.segments):
             finalDrive = []
 
-        def checkDrive(
-            segments: list[JourneySegment],
-            maxValue: float | int | None,
-            label: str
-        ):
-            if maxValue is None:
-                return
-
-            if driving.limitType == "TIME":
-                actual = sum(s.durationSeconds for s in segments)
-                if actual > maxValue:
-                    violations.append(
-                        f"{label} driving time exceeds "
-                        f"{maxValue} seconds"
-                    )
-
-            else:
-                if any(s.distanceMeters is None for s in segments):
-                    violations.append(
-                        f"{label} driving distance cannot be verified"
-                    )
-                    return
-
-                actualKm = sum(
-                    s.distanceMeters for s in segments
-                    if s.distanceMeters is not None
-                ) / 1000
-
-                if actualKm > maxValue:
-                    violations.append(
-                        f"{label} driving distance exceeds "
-                        f"{maxValue} km"
-                    )
-
         if driving.limitType == "TIME":
-            checkDrive(
-                initialDrive,
-                driving.maxInitialDrivingSeconds,
-                "Initial"
+            violations.extend(
+                checkDrive(
+                    initialDrive,
+                    driving.maxInitialDrivingSeconds,
+                    "Initial",
+                    "TIME",
+                )
             )
-            checkDrive(
-                finalDrive,
-                driving.maxFinalDrivingSeconds,
-                "Final"
+            violations.extend(
+                checkDrive(
+                    finalDrive,
+                    driving.maxFinalDrivingSeconds,
+                    "Final",
+                    "TIME",
+                )
             )
         else:
-            checkDrive(
-                initialDrive,
-                driving.maxInitialDrivingKm,
-                "Initial"
+            violations.extend(
+                checkDrive(
+                    initialDrive,
+                    driving.maxInitialDrivingKm,
+                    "Initial",
+                    "DISTANCE",
+                )
             )
-            checkDrive(
-                finalDrive,
-                driving.maxFinalDrivingKm,
-                "Final"
+            violations.extend(
+                checkDrive(
+                    finalDrive,
+                    driving.maxFinalDrivingKm,
+                    "Final",
+                    "DISTANCE",
+                )
             )
+
 
     return ConstraintResult(
         isValid=len(violations) == 0,
