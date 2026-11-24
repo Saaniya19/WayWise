@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
-        Text("Hello, World!")
+        GoogleMapView(
+            apiKey: "AIzaSyAB-MaduXiNmQfmliW4wLzucOv-y5uP3_E"
+        )
+        .ignoresSafeArea()
     }
 }
 
