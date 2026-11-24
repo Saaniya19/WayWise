@@ -42,6 +42,10 @@ class Segment(BaseModel):
     distance_meters: int | None = None
     transit_details: TransitDetails | None = None
 
+    start_location: Coordinates | None = None
+    end_location: Coordinates | None = None
+    encoded_polyline: str | None = None
+
 
 class Leg(BaseModel):
     segments: list[Segment] = Field(default_factory=list)
@@ -52,6 +56,10 @@ class Route(BaseModel):
     distance_meters: int | None = None
     legs: list[Leg] = Field(default_factory=list)
     transfer_count: int | None = None
+    
+    start_location: Coordinates | None = None
+    end_location: Coordinates | None = None
+    encoded_polyline: str | None = None
 
 
 class RouteResult(BaseModel):

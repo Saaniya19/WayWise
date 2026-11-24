@@ -11,9 +11,10 @@ class ConnectionResult:
 
 def checkConnection(
     arrivalTime: datetime,
-    departureTime: datetime
+    departureTime: datetime,
+    minBufferSeconds: int = 0,
 ) -> ConnectionResult:
-    # Both timestamps must include timezone information.
+
     if (
         arrivalTime.utcoffset() is None
         or departureTime.utcoffset() is None
@@ -22,12 +23,11 @@ def checkConnection(
             "Connection timestamps must be timezone-aware"
         )
 
-    # Calculate the time between arrival and departure.
-    connectionSeconds = int(
-        (departureTime - arrivalTime).total_seconds()
-    )
+    connectionSeconds = (
+        departureTime - arrivalTime
+    ).total_seconds()
 
     return ConnectionResult(
-        isFeasible=connectionSeconds >= 60,
-        connectionSeconds=connectionSeconds
+        isFeasible=connectionSeconds >= minBufferSeconds,
+        connectionSeconds=int(connectionSeconds),
     )
