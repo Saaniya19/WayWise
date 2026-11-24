@@ -11,6 +11,8 @@ class DrivingConstraint(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     limitType: Literal["TIME", "DISTANCE"]
+    
+    requiresParking: bool = Field(default=True, strict=True)
 
     # Distance limits in kilometres
     maxInitialDrivingKm: float | None = Field(
