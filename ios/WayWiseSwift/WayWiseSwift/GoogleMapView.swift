@@ -1,3 +1,5 @@
+// xcode: set sdk=iOS
+
 import SwiftUI
 import GoogleMaps
 import CoreLocation
@@ -140,4 +142,11 @@ struct GoogleMapView: UIViewRepresentable {
             with: cameraUpdate
         )
     }
+}
+
+#Preview {
+    GoogleMapView(
+        apiKey: "AIzaSyAB-MaduXiNmQfmliW4wLzucOv-y5uP3_E"
+    )
+    .ignoresSafeArea()
 }
