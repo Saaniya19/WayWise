@@ -13,6 +13,7 @@ SegmentKind = Literal[
     "TRANSIT",
     "WAIT",
     "PARK",
+    "DROP_OFF"
 ]
 
 class TransitDetails(BaseModel):
@@ -91,10 +92,10 @@ class JourneySegment(BaseModel):
             )
 
         # Waiting and parking are stationary activities
-        if self.kind in ("WAIT", "PARK"):
+        if self.kind in ("WAIT", "PARK", "DROP_OFF"):
             if self.distanceMeters is not None:
                 raise ValueError(
-                    "WAIT and PARK segments must have distanceMeters=None"
+                    "WAIT, PARK, and DROP_OFF segments must have distanceMeters=None"
                 )
 
         return self
