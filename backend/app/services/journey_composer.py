@@ -2,6 +2,11 @@ from datetime import datetime, timedelta, timezone
 from math import radians, sin, cos, asin, sqrt
 from uuid import uuid4
 
+from app.config import (
+    DROP_OFF_ACCESS_BUFFER_SECONDS,
+    PARKING_DURATION_SECONDS,
+    LOCATION_TOLERANCE_METERS,
+)
 from app.models.common import Location
 from app.models.journey import (
     Journey,
@@ -11,10 +16,6 @@ from app.models.journey import (
 from app.models.routing import Route, TravelMode
 from app.services.google_routes_client import get_routes
 from app.services.timing_service import checkConnection
-
-
-PARKING_DURATION_SECONDS = 120
-LOCATION_TOLERANCE_METERS = 100
 
 
 def locations_match(
@@ -309,106 +310,129 @@ def merge_walking_segments(
 def compose_journey(
     origin: Location,
     destination: Location,
-    parking_location: Location,
+    parking_location: Location | None,
     boarding_location: Location,
     departure_time: datetime,
+    requires_parking: bool = True,
 ) -> Journey | None:
 
     if departure_time.utcoffset() is None:
-        raise ValueError(
-            "departure_time must be timezone-aware"
-        )
+        raise ValueError("departure_time must be timezone-aware")
 
     departure_time = departure_time.astimezone(
         timezone.utc
     ).replace(microsecond=0)
 
-    # 1. Drive from origin to parking.
+    # Determine driving destination.
+    if requires_parking:
+        if parking_location is None:
+            return None
+
+        driving_destination = parking_location
+    else:
+        driving_destination = boarding_location
+
+    # 1. Request driving routes.
     driving_result = get_routes(
         origin=origin,
-        destination=parking_location,
+        destination=driving_destination,
         mode=TravelMode.DRIVE,
         departure_time=departure_time,
     )
 
     for driving_route in driving_result.routes:
-
-        driving_segment = make_route_segment(
+        drive_segment = make_route_segment(
             route=driving_route,
             kind="DRIVE",
             origin=origin,
-            destination=parking_location,
+            destination=driving_destination,
             start_time=departure_time,
         )
 
-        if driving_segment is None:
+        if drive_segment is None:
             continue
 
-        # 2. Allot two minutes for parking.
-        parking_segment = make_segment(
-            kind="PARK",
-            start_location=parking_location,
-            end_location=parking_location,
-            start_time=driving_segment.endTime,
-            duration_seconds=PARKING_DURATION_SECONDS,
+        # 2. Construct parking or drop-off segment.
+        stationary_segment = make_segment(
+            kind="PARK" if requires_parking else "DROP_OFF",
+            start_location=driving_destination,
+            end_location=driving_destination,
+            start_time=drive_segment.endTime,
+            duration_seconds=(
+                PARKING_DURATION_SECONDS
+                if requires_parking
+                else DROP_OFF_ACCESS_BUFFER_SECONDS
+            ),
         )
 
-        # 3. Walk from parking to the transit station.
-        walking_result = get_routes(
-            origin=parking_location,
-            destination=boarding_location,
-            mode=TravelMode.WALK,
-        )
+        # 3. Generate walking options.
+        walking_options = []
 
-        for walking_route in walking_result.routes:
-
-            walking_segment = make_route_segment(
-                route=walking_route,
-                kind="WALK",
-                origin=parking_location,
+        if requires_parking:
+            walking_result = get_routes(
+                origin=driving_destination,
                 destination=boarding_location,
-                start_time=parking_segment.endTime,
+                mode=TravelMode.WALK,
             )
 
-            if walking_segment is None:
-                continue
+            for walking_route in walking_result.routes:
+                walk_segment = make_route_segment(
+                    route=walking_route,
+                    kind="WALK",
+                    origin=driving_destination,
+                    destination=boarding_location,
+                    start_time=stationary_segment.endTime,
+                )
 
-            # 4. Request transit routes based on when
-            # the traveller actually reaches the station.
+                if walk_segment is not None:
+                    walking_options.append(walk_segment)
+
+        else:
+            # No separate walking segment required.
+            walking_options.append(None)
+
+        # 4. Request transit routes for each walking option.
+        for walk_segment in walking_options:
+            transit_departure_time = (
+                walk_segment.endTime
+                if walk_segment is not None
+                else stationary_segment.endTime
+            )
+
             transit_result = get_routes(
                 origin=boarding_location,
                 destination=destination,
                 mode=TravelMode.TRANSIT,
-                departure_time=walking_segment.endTime,
+                departure_time=transit_departure_time,
             )
 
             for transit_route in transit_result.routes:
-
                 transit_segments = compose_transit_segments(
-                    route=transit_route,
-                    boarding_location=boarding_location,
-                    destination=destination,
-                    start_time=walking_segment.endTime,
+                    transit_route,
+                    boarding_location,
+                    destination,
+                    transit_departure_time,
                 )
 
-                if transit_segments is None:
+                if not transit_segments:
                     continue
 
-                # 5. Compose the complete journey.
-                segments = merge_walking_segments([
-                    driving_segment,
-                    parking_segment,
-                    walking_segment,
-                    *transit_segments,
-                ])
+                # 5. Assemble the complete journey.
+                segments = [drive_segment, stationary_segment]
+
+                if walk_segment is not None:
+                    segments.append(walk_segment)
+
+                segments.extend(transit_segments)
+                segments = merge_walking_segments(segments)
 
                 # Validate geographical continuity.
                 if any(
                     not locations_match(
-                        previous.endLocation,
-                        current.startLocation,
+                        first.endLocation,
+                        second.startLocation,
                     )
-                    for previous, current in zip(
+                    for first, second in zip(
                         segments, segments[1:]
                     )
                 ):
@@ -428,15 +452,9 @@ def compose_journey(
                     departureTime=departure_time,
                     arrivalTime=arrival_time,
                     totalDurationSeconds=int(
-                        (
-                            arrival_time - departure_time
-                        ).total_seconds()
+                        (arrival_time - departure_time).total_seconds()
                     ),
-                    transferCount=max(
-                        0, transit_count - 1
-                    ),
+                    transferCount=max(0, transit_count - 1),
                 )
 
-    # No feasible journey was found.
     return None
-
