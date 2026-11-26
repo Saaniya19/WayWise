@@ -7,6 +7,63 @@ from app.models.common import Location
 from app.models.journey import Journey
 
 
+class BikingConstraint(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    limitType: Literal["TIME", "DISTANCE"]
+
+    # Distance limits in kilometres
+    maxInitialBikingKm: float | None = Field(
+        default=None, ge=0, allow_inf_nan=False
+    )
+
+    maxFinalBikingKm: float | None = Field(
+        default=None, ge=0, allow_inf_nan=False
+    )
+
+    # Time limits in seconds
+    maxInitialBikingSeconds: int | None = Field(
+        default=None, ge=0, strict=True
+    )
+
+    maxFinalBikingSeconds: int | None = Field(
+        default=None, ge=0, strict=True
+    )
+
+    @model_validator(mode="after")
+    def validateBikingLimit(self):
+        distanceFields = (
+            self.maxInitialBikingKm,
+            self.maxFinalBikingKm,
+        )
+
+        timeFields = (
+            self.maxInitialBikingSeconds,
+            self.maxFinalBikingSeconds,
+        )
+
+        if self.limitType == "TIME":
+            if any(value is not None for value in distanceFields):
+                raise ValueError(
+                    "TIME constraints cannot specify distance limits"
+                )
+
+            if all(value is None for value in timeFields):
+                raise ValueError("A biking time limit is required")
+
+        else:
+            if any(value is not None for value in timeFields):
+                raise ValueError(
+                    "DISTANCE constraints cannot specify time limits"
+                )
+
+            if all(value is None for value in distanceFields):
+                raise ValueError("A biking distance limit is required")
+
+        return self
+        return self
+
+
 class DrivingConstraint(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -68,9 +125,7 @@ class TravelConstraints(BaseModel):
     maxWalkingSegmentMinutes: float | None = Field(
         default=None, ge=0, allow_inf_nan=False
     )
-    maxBikingSegmentMinutes: float | None = Field(
-        default=None, ge=0, allow_inf_nan=False
-    )
+    biking: BikingConstraint | None = None
     driving: DrivingConstraint | None = None
     transit: TransitConstraint | None = None
 

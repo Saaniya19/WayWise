@@ -110,7 +110,7 @@ def testMissingModeFields():
     constraints = TravelConstraints()
 
     assert constraints.maxWalkingSegmentMinutes is None
-    assert constraints.maxBikingSegmentMinutes is None
+    assert constraints.biking is None
     assert constraints.driving is None
     assert constraints.transit is None
 

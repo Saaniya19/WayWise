@@ -11,7 +11,8 @@ class ConnectionResult:
 
 def checkConnection(
     arrivalTime: datetime,
-    departureTime: datetime
+    departureTime: datetime,
+    minBufferSeconds: int = 0
 ) -> ConnectionResult:
     # Both timestamps must include timezone information.
     if (
@@ -28,6 +29,6 @@ def checkConnection(
     )
 
     return ConnectionResult(
-        isFeasible=connectionSeconds >= 60,
+        isFeasible=connectionSeconds >= minBufferSeconds,
         connectionSeconds=connectionSeconds
     )
