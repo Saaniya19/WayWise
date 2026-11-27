@@ -9,6 +9,12 @@
 from datetime import datetime
 from typing import Any
 
+from app.models.candidates import (
+    AccessMode,
+    CandidateEnd,
+    TransferCandidateDistance,
+    TransitStation,
+)
 from app.models.routing import (
     Coordinates,
     Leg,
@@ -170,3 +176,45 @@ def normalize_routes(response: dict[str, Any]) -> RouteResult:
             )
 
     return RouteResult(routes=routes, warnings=warnings)
+
+
+def normalize_route_matrix(
+    data: list[dict[str, Any]],
+    end: CandidateEnd,
+    mode: AccessMode,
+    stations: list[TransitStation],
+) -> list[TransferCandidateDistance]:
+    """Convert a Route Matrix response into TransferCandidateDistances."""
+    distances = []
+
+    for item in data:
+        # Google identifies each station by its position in the request:
+        # the destination at the ORIGIN end, the origin at the
+        # DESTINATION end.
+        position = (
+            item.get("destinationIndex", 0) if end == "ORIGIN"
+            else item.get("originIndex", 0)
+        )
+        status_code = (item.get("status") or {}).get("code", 0)
+        route_exists = (
+            status_code == 0
+            and item.get("condition") == "ROUTE_EXISTS"
+        )
+
+        distances.append(
+            TransferCandidateDistance(
+                station=stations[position],
+                end=end,
+                mode=mode,
+                routeExists=route_exists,
+                durationSeconds=(
+                    parse_duration(item.get("duration"))
+                    if route_exists else None
+                ),
+                distanceMeters=(
+                    item.get("distanceMeters") if route_exists else None
+                ),
+            )
+        )
+
+    return distances
