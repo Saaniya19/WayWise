@@ -26,11 +26,11 @@ from app.models.planning import (
 def testValidDrivingConstraint(initial, final):
     constraint = DrivingConstraint(
         limitType="DISTANCE",
-        maxInitialDrivingKm=initial,
-        maxFinalDrivingKm=final,
+        maxInitialKm=initial,
+        maxFinalKm=final,
     )
-    assert constraint.maxInitialDrivingKm == initial
-    assert constraint.maxFinalDrivingKm == final
+    assert constraint.maxInitialKm == initial
+    assert constraint.maxFinalKm == final
 
 
 @pytest.mark.parametrize(
@@ -70,15 +70,15 @@ def testValidTravelConstraints():
         maxWalkingSegmentMinutes=10,
         driving=DrivingConstraint(
             limitType="DISTANCE",
-            maxInitialDrivingKm=15,
-            maxFinalDrivingKm=5,
+            maxInitialKm=15,
+            maxFinalKm=5,
         ),
         transit=TransitConstraint(maxTransfers=1),
     )
 
     assert constraints.maxWalkingSegmentMinutes == 10
-    assert constraints.driving.maxInitialDrivingKm == 15
-    assert constraints.driving.maxFinalDrivingKm == 5
+    assert constraints.driving.maxInitialKm == 15
+    assert constraints.driving.maxFinalKm == 5
     assert constraints.transit.maxTransfers == 1
 
 
@@ -130,8 +130,8 @@ def testValidPlanningRequest():
             "maxWalkingSegmentMinutes": 10,
             "driving": {
                 "limitType": "DISTANCE",
-                "maxInitialDrivingKm": 15,
-                "maxFinalDrivingKm": 5
+                "maxInitialKm": 15,
+                "maxFinalKm": 5
             },
             "transit": {
                 "maxTransfers": 1
@@ -140,8 +140,8 @@ def testValidPlanningRequest():
     )
 
     assert request.origin.latitude == 43.4723
-    assert request.constraints.driving.maxInitialDrivingKm == 15
-    assert request.constraints.driving.maxFinalDrivingKm == 5
+    assert request.constraints.driving.maxInitialKm == 15
+    assert request.constraints.driving.maxFinalKm == 5
 
     result = request.model_dump()
 

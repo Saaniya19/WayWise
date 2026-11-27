@@ -1,11 +1,7 @@
 from pydantic import BaseModel, Field
 
 from app.models.journey import Journey, JourneySegment, SegmentKind
-from app.models.planning import (
-    TravelConstraints,
-    DrivingConstraint,
-    BikingConstraint,
-)
+from app.models.planning import AccessConstraint, TravelConstraints
 
 SEGMENT_TIME_TOLERANCE_SECONDS = 60
 DRIVING_TIME_TOLERANCE_SECONDS = 120
@@ -51,34 +47,26 @@ def getInitialFinalSegments(
 def checkInitialFinalLimits(
     journey: Journey,
     kind: SegmentKind,
-    constraint: DrivingConstraint | BikingConstraint,
+    constraint: AccessConstraint,
 ) -> list[str]:
 
     initialSegments, finalSegments = getInitialFinalSegments(
         journey, kind
     )
 
-    if isinstance(constraint, DrivingConstraint):
+    if kind == "DRIVE":
         modeName = "driving"
         tolerance = DRIVING_TIME_TOLERANCE_SECONDS
-
-        if constraint.limitType == "TIME":
-            initialLimit = constraint.maxInitialDrivingSeconds
-            finalLimit = constraint.maxFinalDrivingSeconds
-        else:
-            initialLimit = constraint.maxInitialDrivingKm
-            finalLimit = constraint.maxFinalDrivingKm
-
     else:
         modeName = "biking"
         tolerance = BIKING_TIME_TOLERANCE_SECONDS
 
-        if constraint.limitType == "TIME":
-            initialLimit = constraint.maxInitialBikingSeconds
-            finalLimit = constraint.maxFinalBikingSeconds
-        else:
-            initialLimit = constraint.maxInitialBikingKm
-            finalLimit = constraint.maxFinalBikingKm
+    if constraint.limitType == "TIME":
+        initialLimit = constraint.maxInitialSeconds
+        finalLimit = constraint.maxFinalSeconds
+    else:
+        initialLimit = constraint.maxInitialKm
+        finalLimit = constraint.maxFinalKm
 
     violations = []
 
