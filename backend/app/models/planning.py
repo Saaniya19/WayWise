@@ -7,38 +7,39 @@ from app.models.common import Location
 from app.models.journey import Journey
 
 
-class DrivingConstraint(BaseModel):
+class AccessConstraint(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     limitType: Literal["TIME", "DISTANCE"]
-    
-    requiresParking: bool = Field(default=True, strict=True)
 
     # Distance limits in kilometres
-    maxInitialDrivingKm: float | None = Field(
+    maxInitialKm: float | None = Field(
         default=None, ge=0, allow_inf_nan=False
     )
-    maxFinalDrivingKm: float | None = Field(
+
+    maxFinalKm: float | None = Field(
         default=None, ge=0, allow_inf_nan=False
     )
 
     # Time limits in seconds
-    maxInitialDrivingSeconds: int | None = Field(
+    maxInitialSeconds: int | None = Field(
         default=None, ge=0, strict=True
     )
-    maxFinalDrivingSeconds: int | None = Field(
+
+    maxFinalSeconds: int | None = Field(
         default=None, ge=0, strict=True
     )
 
     @model_validator(mode="after")
-    def validateDrivingLimit(self):
+    def validateLimit(self):
         distanceFields = (
-            self.maxInitialDrivingKm,
-            self.maxFinalDrivingKm,
+            self.maxInitialKm,
+            self.maxFinalKm,
         )
+
         timeFields = (
-            self.maxInitialDrivingSeconds,
-            self.maxFinalDrivingSeconds,
+            self.maxInitialSeconds,
+            self.maxFinalSeconds,
         )
 
         if self.limitType == "TIME":
@@ -46,18 +47,28 @@ class DrivingConstraint(BaseModel):
                 raise ValueError(
                     "TIME constraints cannot specify distance limits"
                 )
+
             if all(value is None for value in timeFields):
-                raise ValueError("A driving time limit is required")
+                raise ValueError("A time limit is required")
 
         else:
             if any(value is not None for value in timeFields):
                 raise ValueError(
                     "DISTANCE constraints cannot specify time limits"
                 )
+
             if all(value is None for value in distanceFields):
-                raise ValueError("A driving distance limit is required")
+                raise ValueError("A distance limit is required")
 
         return self
+
+
+class DrivingConstraint(AccessConstraint):
+    requiresParking: bool = Field(default=True, strict=True)
+
+
+class BikingConstraint(AccessConstraint):
+    pass
 
 
 class TransitConstraint(BaseModel):
@@ -68,9 +79,7 @@ class TravelConstraints(BaseModel):
     maxWalkingSegmentMinutes: float | None = Field(
         default=None, ge=0, allow_inf_nan=False
     )
-    maxBikingSegmentMinutes: float | None = Field(
-        default=None, ge=0, allow_inf_nan=False
-    )
+    biking: BikingConstraint | None = None
     driving: DrivingConstraint | None = None
     transit: TransitConstraint | None = None
 

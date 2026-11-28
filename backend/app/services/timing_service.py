@@ -12,7 +12,7 @@ class ConnectionResult:
 def checkConnection(
     arrivalTime: datetime,
     departureTime: datetime,
-    minBufferSeconds: int = 0,
+    minBufferSeconds: int = 0
 ) -> ConnectionResult:
 
     if (

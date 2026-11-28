@@ -19,6 +19,7 @@ class TravelMode(str, Enum):
     DRIVE = "DRIVE"
     WALK = "WALK"
     TRANSIT = "TRANSIT"
+    BICYCLE = "BICYCLE"
 
 
 class TransitStop(BaseModel):
