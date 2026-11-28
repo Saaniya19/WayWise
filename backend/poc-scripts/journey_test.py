@@ -3,7 +3,10 @@ from zoneinfo import ZoneInfo
 
 from app.models.common import Location
 from app.services.journey_composer import compose_journey
+import logging
 
+logging.getLogger("app.services.journey_composer").setLevel(logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 origin = Location(
     name="University of Waterloo",

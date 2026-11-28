@@ -1,11 +1,13 @@
 from datetime import datetime, timedelta, timezone
-from math import radians, sin, cos, asin, sqrt
+from haversine import haversine, Unit
 from uuid import uuid4
+from pydantic import ValidationError
 
 from app.config import (
     DROP_OFF_ACCESS_BUFFER_SECONDS,
     PARKING_DURATION_SECONDS,
-    LOCATION_TOLERANCE_METERS,
+    GOOGLE_SNAPPING_TOLERANCE_METERS,
+    SEGMENT_CONTINUITY_TOLERANCE_METERS,
 )
 from app.models.common import Location
 from app.models.journey import (
@@ -13,33 +15,56 @@ from app.models.journey import (
     JourneySegment,
     TransitDetails,
 )
-from app.models.routing import Route, TravelMode
+from app.models.routing import Route, Segment, TravelMode
 from app.services.google_routes_client import get_routes
 from app.services.timing_service import checkConnection
+from app.models.journey import SegmentKind
+
+import polyline
+import logging
+
+logger = logging.getLogger(__name__)
+
+def merge_polylines(
+    first: str | None,
+    second: str | None,
+) -> str | None:
+    if not first or not second:
+        logger.debug(
+            "Cannot merge polylines: missing segment geometry"
+        )
+        return None
+
+    first_points = polyline.decode(first)
+    second_points = polyline.decode(second)
+
+    # Avoid duplicating the shared endpoint.
+    if first_points and second_points:
+        if first_points[-1] == second_points[0]:
+            second_points = second_points[1:]
+
+    return polyline.encode(first_points + second_points)
 
 
+# checks whether two locations are within a specified
+# distance tolerance (using haversine)
 def locations_match(
     first: Location,
     second: Location,
+    tolerance_meters: float,
 ) -> bool:
-    lat1 = radians(first.latitude)
-    lat2 = radians(second.latitude)
-
-    dlat = lat2 - lat1
-    dlon = radians(second.longitude - first.longitude)
-
-    a = (
-        sin(dlat / 2) ** 2
-        + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    distance = haversine(
+        (first.latitude, first.longitude),
+        (second.latitude, second.longitude),
+        unit=Unit.METERS,
     )
 
-    distance = 2 * 6371000 * asin(sqrt(min(1.0, a)))
-
-    return distance <= LOCATION_TOLERANCE_METERS
+    return distance <= tolerance_meters
     
 
+# constructs a journey segment from explicitly provided params
 def make_segment(
-    kind,
+    kind: SegmentKind,
     start_location: Location,
     end_location: Location,
     start_time: datetime,
@@ -65,6 +90,8 @@ def make_segment(
     )
     
 
+# validates an existing route and extracts its params before
+# passing them to make_segment()
 def make_route_segment(
     route: Route,
     kind: str,
@@ -83,32 +110,235 @@ def make_route_segment(
         return None
 
     if not locations_match(
-        origin, route.start_location
+        origin,
+        route.start_location,
+        GOOGLE_SNAPPING_TOLERANCE_METERS,
     ):
+        logger.debug(
+            "Rejecting %s route: endpoint exceeds snapping tolerance",
+            kind,
+        )
         return None
 
     if not locations_match(
-        destination, route.end_location
+        destination,
+        route.end_location,
+        GOOGLE_SNAPPING_TOLERANCE_METERS,
     ):
+        logger.debug(
+            "Rejecting %s route: endpoint exceeds snapping tolerance",
+            kind,
+        )
         return None
 
     return make_segment(
         kind=kind,
-        start_location=origin,
-        end_location=destination,
+        start_location=route.start_location,
+        end_location=route.end_location,
         start_time=start_time,
         duration_seconds=route.duration_seconds,
         distance_meters=route.distance_meters,
         encoded_polyline=route.encoded_polyline,
     )
 
+def compose_walking_step(
+    step: Segment,
+    current_location: Location,
+    current_time: datetime,
+) -> JourneySegment | None:
+
+    if (
+        step.duration_seconds is None
+        or step.duration_seconds < 0
+        or step.distance_meters is None
+        or step.start_location is None
+        or step.end_location is None
+    ):
+        logger.debug(
+            "Rejecting walking step: missing or invalid step data"
+        )
+        return None
+
+    if not locations_match(
+        current_location,
+        step.start_location,
+        SEGMENT_CONTINUITY_TOLERANCE_METERS,
+    ):
+        logger.debug(
+            "Rejecting walking step: geographical discontinuity"
+        )
+        return None
+
+    return make_segment(
+        kind="WALK",
+        start_location=step.start_location,
+        end_location=step.end_location,
+        start_time=current_time,
+        duration_seconds=step.duration_seconds,
+        distance_meters=step.distance_meters,
+        encoded_polyline=step.encoded_polyline,
+    )
     
+
+def compose_transit_step(
+    step: Segment,
+    current_location: Location,
+    current_time: datetime,
+) -> list[JourneySegment] | None:
+
+    segments = []
+    details = step.transit_details
+
+    if (
+        details is None
+        or details.departure_time is None
+        or details.arrival_time is None
+        or details.departure_stop is None
+        or details.arrival_stop is None
+        or details.departure_stop.location is None
+        or details.arrival_stop.location is None
+    ):
+        logger.debug(
+            "Rejecting transit step: missing required transit details"
+        )
+        return None
+
+    if (
+        details.departure_time.utcoffset() is None
+        or details.arrival_time.utcoffset() is None
+    ):
+        logger.debug(
+            "Rejecting transit step: timestamps are not timezone-aware"
+        )
+        return None
+
+    departure = details.departure_time.astimezone(
+        timezone.utc
+    ).replace(microsecond=0)
+
+    arrival = details.arrival_time.astimezone(
+        timezone.utc
+    ).replace(microsecond=0)
+
+    if arrival <= departure:
+        logger.debug(
+            "Rejecting transit step: invalid ride timing"
+        )
+        return None
+
+    boarding_stop = details.departure_stop.location
+    alighting_stop = details.arrival_stop.location
+
+    if not locations_match(
+        current_location,
+        boarding_stop,
+        SEGMENT_CONTINUITY_TOLERANCE_METERS,
+    ):
+        logger.debug(
+            "Rejecting transit step: discontinuity at boarding stop"
+        )
+        return None
+
+    connection = checkConnection(
+        current_time,
+        departure,
+        minBufferSeconds=0,
+    )
+
+    if not connection.isFeasible:
+        logger.debug(
+            "Rejecting transit step: infeasible connection "
+            "(traveller arrival=%s, service departure=%s)",
+            current_time,
+            departure,
+        )
+        return None
+
+    wait_seconds = (
+        departure - current_time
+    ).total_seconds()
+
+    ride_seconds = (
+        arrival - departure
+    ).total_seconds()
+
+    if wait_seconds > 0:
+        segments.append(
+            make_segment(
+                kind="WAIT",
+                start_location=current_location,
+                end_location=current_location,
+                start_time=current_time,
+                duration_seconds=int(wait_seconds),
+            )
+        )
+
+    transit_details = TransitDetails(
+        agencyName=details.agency_name,
+        serviceName=details.line_name,
+        routeShortName=details.route_short_name,
+        vehicleType=details.vehicle_type,
+        boardingStop=boarding_stop,
+        alightingStop=alighting_stop,
+        headsign=details.headsign,
+        stopCount=details.stop_count,
+        timingBasis="SCHEDULED",
+    )
+
+    segments.append(
+        make_segment(
+            kind="TRANSIT",
+            start_location=boarding_stop,
+            end_location=alighting_stop,
+            start_time=departure,
+            duration_seconds=int(ride_seconds),
+            distance_meters=step.distance_meters,
+            encoded_polyline=step.encoded_polyline,
+            transit_details=transit_details,
+        )
+    )
+
+    return segments
+
+
+# converts a Google transit route into individual walking,
+# waiting, and transit segments, while checking connection
+# feasibility and ensuring continuity
 def compose_transit_segments(
     route: Route,
     boarding_location: Location,
     destination: Location,
     start_time: datetime,
 ) -> list[JourneySegment] | None:
+
+    if (
+        route.start_location is None
+        or route.end_location is None
+    ):
+        logger.debug(
+            "Rejecting transit route: missing route endpoints"
+        )
+        return None
+
+    if not locations_match(
+        boarding_location,
+        route.start_location,
+        GOOGLE_SNAPPING_TOLERANCE_METERS,
+    ):
+        logger.debug(
+            "Rejecting transit route: start exceeds snapping tolerance"
+        )
+        return None
+
+    if not locations_match(
+        destination,
+        route.end_location,
+        GOOGLE_SNAPPING_TOLERANCE_METERS,
+    ):
+        logger.debug(
+            "Rejecting transit route: end exceeds snapping tolerance"
+        )
+        return None
 
     segments = []
     current_time = start_time
@@ -119,148 +349,60 @@ def compose_transit_segments(
         for step in leg.segments:
 
             if step.mode == TravelMode.WALK:
-
-                if (
-                    step.duration_seconds is None
-                    or step.duration_seconds < 0
-                    or step.distance_meters is None
-                    or step.start_location is None
-                    or step.end_location is None
-                ):
-                    return None
-
-                if not locations_match(
+                segment = compose_walking_step(
+                    step,
                     current_location,
-                    step.start_location,
-                ):
+                    current_time,
+                )
+
+                if segment is None:
                     return None
 
-                segment = make_segment(
-                    kind="WALK",
-                    start_location=current_location,
-                    end_location=step.end_location,
-                    start_time=current_time,
-                    duration_seconds=step.duration_seconds,
-                    distance_meters=step.distance_meters,
-                    encoded_polyline=step.encoded_polyline,
-                )
+                segments.append(segment)
 
             elif step.mode == TravelMode.TRANSIT:
-
-                details = step.transit_details
-
-                if (
-                    details is None
-                    or details.departure_time is None
-                    or details.arrival_time is None
-                    or details.departure_stop is None
-                    or details.arrival_stop is None
-                    or details.departure_stop.location is None
-                    or details.arrival_stop.location is None
-                ):
-                    return None
-
-                if (
-                    details.departure_time.utcoffset() is None
-                    or details.arrival_time.utcoffset() is None
-                ):
-                    return None
-
-                departure = details.departure_time.astimezone(
-                    timezone.utc
-                )
-                arrival = details.arrival_time.astimezone(
-                    timezone.utc
-                )
-
-                if arrival <= departure:
-                    return None
-
-                boarding_stop = details.departure_stop.location
-                alighting_stop = details.arrival_stop.location
-
-                if not locations_match(
-                    current_location, boarding_stop
-                ):
-                    return None
-
-                connection = checkConnection(
+                transit_segments = compose_transit_step(
+                    step,
+                    current_location,
                     current_time,
-                    departure,
-                    minBufferSeconds=0,
                 )
 
-                # The traveller has missed this service.
-                if not connection.isFeasible:
+                if transit_segments is None:
                     return None
 
-                wait_seconds = (
-                    departure - current_time
-                ).total_seconds()
-
-                ride_seconds = (
-                    arrival - departure
-                ).total_seconds()
-
-                if (
-                    not wait_seconds.is_integer()
-                    or not ride_seconds.is_integer()
-                ):
-                    return None
-
-                # Include time spent waiting for transit.
-                if wait_seconds > 0:
-                    segments.append(
-                        make_segment(
-                            kind="WAIT",
-                            start_location=current_location,
-                            end_location=current_location,
-                            start_time=current_time,
-                            duration_seconds=int(wait_seconds),
-                        )
-                    )
-
-                transit_details = TransitDetails(
-                    agencyName=details.agency_name,
-                    serviceName=details.line_name,
-                    routeShortName=None,
-                    vehicleType=details.vehicle_type,
-                    boardingStop=boarding_stop,
-                    alightingStop=alighting_stop,
-                    headsign=None,
-                    stopCount=None,
-                    timingBasis="SCHEDULED",
-                )
-
-                segment = make_segment(
-                    kind="TRANSIT",
-                    start_location=boarding_stop,
-                    end_location=alighting_stop,
-                    start_time=departure,
-                    duration_seconds=int(ride_seconds),
-                    distance_meters=step.distance_meters,
-                    encoded_polyline=step.encoded_polyline,
-                    transit_details=transit_details,
-                )
-
+                segments.extend(transit_segments)
                 transit_count += 1
 
             else:
+                logger.debug(
+                    "Rejecting transit route: unsupported step mode %s",
+                    step.mode,
+                )
                 return None
 
-            segments.append(segment)
-            current_time = segment.endTime
-            current_location = segment.endLocation
+            current_time = segments[-1].endTime
+            current_location = segments[-1].endLocation
 
     if transit_count == 0:
+        logger.debug(
+            "Rejecting transit route: no transit segments found"
+        )
         return None
 
-    if not locations_match(current_location, destination):
+    if not locations_match(
+        current_location,
+        route.end_location,
+        SEGMENT_CONTINUITY_TOLERANCE_METERS,
+    ):
+        logger.debug(
+            "Rejecting transit route: final endpoint discontinuity"
+        )
         return None
 
     return segments
     
 
+# combines any consecutive walking segments
 def merge_walking_segments(
     segments: list[JourneySegment],
 ) -> list[JourneySegment]:
@@ -273,6 +415,12 @@ def merge_walking_segments(
             merged
             and merged[-1].kind == "WALK"
             and segment.kind == "WALK"
+            and merged[-1].endTime == segment.startTime
+            and locations_match(
+                merged[-1].endLocation,
+                segment.startLocation,
+                SEGMENT_CONTINUITY_TOLERANCE_METERS,
+            )
         ):
             previous = merged.pop()
 
@@ -298,6 +446,10 @@ def merge_walking_segments(
                         + segment.durationSeconds
                     ),
                     distance_meters=distance,
+                    encoded_polyline=merge_polylines(
+                        previous.encodedPolyline,
+                        segment.encodedPolyline,
+                    ),
                 )
             )
 
@@ -307,6 +459,8 @@ def merge_walking_segments(
     return merged
 
 
+# coordinates driving, parking, drop-off, walking, and transit
+# routing calls to construct a feasible multimodal journey
 def compose_journey(
     origin: Location,
     destination: Location,
@@ -326,7 +480,7 @@ def compose_journey(
     # Determine driving destination.
     if requires_parking:
         if parking_location is None:
-            return None
+            parking_location = boarding_location
 
         driving_destination = parking_location
     else:
@@ -355,8 +509,8 @@ def compose_journey(
         # 2. Construct parking or drop-off segment.
         stationary_segment = make_segment(
             kind="PARK" if requires_parking else "DROP_OFF",
-            start_location=driving_destination,
-            end_location=driving_destination,
+            start_location=drive_segment.endLocation,
+            end_location=drive_segment.endLocation,
             start_time=drive_segment.endTime,
             duration_seconds=(
                 PARKING_DURATION_SECONDS
@@ -368,7 +522,11 @@ def compose_journey(
         # 3. Generate walking options.
         walking_options = []
 
-        if requires_parking:
+        if requires_parking and not locations_match(
+            driving_destination,
+            boarding_location,
+            SEGMENT_CONTINUITY_TOLERANCE_METERS,
+        ):
             walking_result = get_routes(
                 origin=driving_destination,
                 destination=boarding_location,
@@ -424,19 +582,32 @@ def compose_journey(
                     segments.append(walk_segment)
 
                 segments.extend(transit_segments)
-                segments = merge_walking_segments(segments)
 
-                # Validate geographical continuity.
+                # Validate temporal continuity before merging.
+                if any(
+                    first.endTime != second.startTime
+                    for first, second in zip(segments, segments[1:])
+                ):
+                    logger.debug(
+                        "Rejecting journey: temporal discontinuity between segments"
+                    )
+                    continue
+
+                # Validate geographical continuity before merging.
                 if any(
                     not locations_match(
                         first.endLocation,
                         second.startLocation,
+                        SEGMENT_CONTINUITY_TOLERANCE_METERS,
                     )
-                    for first, second in zip(
-                        segments, segments[1:]
-                    )
+                    for first, second in zip(segments, segments[1:])
                 ):
+                    logger.debug(
+                        "Rejecting journey: geographical discontinuity between segments"
+                    )
                     continue
+
+                segments = merge_walking_segments(segments)
 
                 arrival_time = segments[-1].endTime
 
@@ -445,16 +616,23 @@ def compose_journey(
                     for segment in segments
                 )
 
-                return Journey(
-                    id=str(uuid4()),
-                    journeyType="DRIVE_WALK_TRANSIT",
-                    segments=segments,
-                    departureTime=departure_time,
-                    arrivalTime=arrival_time,
-                    totalDurationSeconds=int(
-                        (arrival_time - departure_time).total_seconds()
-                    ),
-                    transferCount=max(0, transit_count - 1),
-                )
+                try:
+                    return Journey(
+                        id=str(uuid4()),
+                        journeyType="DRIVE_WALK_TRANSIT",
+                        segments=segments,
+                        departureTime=departure_time,
+                        arrivalTime=arrival_time,
+                        totalDurationSeconds=int(
+                            (arrival_time - departure_time).total_seconds()
+                        ),
+                        transferCount=max(0, transit_count - 1),
+                    )
+                except ValidationError as exc:
+                    logger.warning(
+                        "Rejecting journey due to validation error: %s",
+                        exc,
+                    )
+                    continue
 
     return None

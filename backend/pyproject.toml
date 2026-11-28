@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "fastapi[standard]>=0.128.8",
+    "haversine>=2.9.0",
     "httpx>=0.28.1",
+    "polyline>=2.0.5",
     "pydantic-settings>=2.11.0",
 ]
 

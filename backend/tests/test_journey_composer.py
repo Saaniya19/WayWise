@@ -15,6 +15,9 @@ from app.models.routing import (
 )
 from app.services.journey_composer import compose_journey
 
+import polyline
+from app.services.journey_composer import merge_polylines
+
 
 DEPARTURE_TIME = datetime(
     2026, 11, 24, 8, 0, tzinfo=timezone.utc
@@ -104,6 +107,9 @@ def transit_route():
                             line_name="Kitchener",
                             agency_name="GO Transit",
                             vehicle_type="TRAIN",
+                            route_short_name="KI",
+                            headsign="Union Station",
+                            stop_count=8,
                         ),
                     ),
                     Segment(
@@ -155,7 +161,6 @@ def run_composer(
         )
 
         return journey, mock_get_routes
-        
 
 def test_successful_journey(
     driving_route,
@@ -192,6 +197,36 @@ def test_successful_journey(
 
     assert mock.call_count == 3
     
+
+def test_transit_details_propagation(
+    driving_route,
+    walking_route,
+    transit_route,
+):
+    journey, _ = run_composer(
+        [driving_route],
+        [walking_route],
+        [transit_route],
+    )
+
+    assert journey is not None
+
+    transit = next(
+        s for s in journey.segments
+        if s.kind == "TRANSIT"
+    )
+
+    details = transit.transitDetails
+
+    assert details is not None
+    assert details.agencyName == "GO Transit"
+    assert details.serviceName == "Kitchener"
+    assert details.vehicleType == "TRAIN"
+    assert details.routeShortName == "KI"
+    assert details.headsign == "Union Station"
+    assert details.stopCount == 8
+    assert details.timingBasis == "SCHEDULED"
+
     
 def test_parking_duration(
     driving_route,
@@ -238,7 +273,39 @@ def test_waiting_duration(
     assert waiting.startTime == time_at(40)
     assert waiting.endTime == time_at(45)
     assert waiting.distanceMeters is None
-    
+
+
+def test_merge_polylines():
+    first_points = [
+        (43.450, -80.480),
+        (43.451, -80.481),
+    ]
+
+    second_points = [
+        (43.451, -80.481),
+        (43.452, -80.482),
+    ]
+
+    result = merge_polylines(
+        polyline.encode(first_points),
+        polyline.encode(second_points),
+    )
+
+    assert result is not None
+    assert polyline.decode(result) == [
+        (43.450, -80.480),
+        (43.451, -80.481),
+        (43.452, -80.482),
+    ]
+
+
+def test_merge_polylines_missing_geometry():
+    encoded = polyline.encode([(43.450, -80.480)])
+
+    assert merge_polylines(None, encoded) is None
+    assert merge_polylines(encoded, None) is None
+    assert merge_polylines(None, None) is None
+
 
 def test_chronological_consistency(
     driving_route,

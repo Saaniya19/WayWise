@@ -34,6 +34,9 @@ class TransitDetails(BaseModel):
     line_name: str | None = None
     agency_name: str | None = None
     vehicle_type: str | None = None
+    route_short_name: str | None = None
+    headsign: str | None = None
+    stop_count: int | None = None
 
 
 class Segment(BaseModel):

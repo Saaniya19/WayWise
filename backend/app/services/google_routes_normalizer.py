@@ -97,6 +97,9 @@ def parse_transit_details(data: dict | None) -> TransitDetails | None:
         or transit_line.get("name"),
         agency_name=agencies[0].get("name") if agencies else None,
         vehicle_type=vehicle.get("type"),
+        route_short_name=transit_line.get("nameShort"),
+        headsign=data.get("headsign"),
+        stop_count=data.get("stopCount"),
     )
 
 
