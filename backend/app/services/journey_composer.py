@@ -94,7 +94,7 @@ def make_segment(
 # passing them to make_segment()
 def make_route_segment(
     route: Route,
-    kind: str,
+    kind: SegmentKind,
     origin: Location,
     destination: Location,
     start_time: datetime,
@@ -528,7 +528,7 @@ def compose_journey(
             SEGMENT_CONTINUITY_TOLERANCE_METERS,
         ):
             walking_result = get_routes(
-                origin=driving_destination,
+                origin=stationary_segment.endLocation,
                 destination=boarding_location,
                 mode=TravelMode.WALK,
             )
@@ -537,7 +537,7 @@ def compose_journey(
                 walk_segment = make_route_segment(
                     route=walking_route,
                     kind="WALK",
-                    origin=driving_destination,
+                    origin=stationary_segment.endLocation,
                     destination=boarding_location,
                     start_time=stationary_segment.endTime,
                 )
@@ -551,6 +551,12 @@ def compose_journey(
 
         # 4. Request transit routes for each walking option.
         for walk_segment in walking_options:
+            transit_origin = (
+                walk_segment.endLocation
+                if walk_segment is not None
+                else stationary_segment.endLocation
+            )
+        
             transit_departure_time = (
                 walk_segment.endTime
                 if walk_segment is not None
@@ -558,7 +564,7 @@ def compose_journey(
             )
 
             transit_result = get_routes(
-                origin=boarding_location,
+                origin=transit_origin,
                 destination=destination,
                 mode=TravelMode.TRANSIT,
                 departure_time=transit_departure_time,
@@ -567,7 +573,7 @@ def compose_journey(
             for transit_route in transit_result.routes:
                 transit_segments = compose_transit_segments(
                     transit_route,
-                    boarding_location,
+                    transit_origin,
                     destination,
                     transit_departure_time,
                 )
