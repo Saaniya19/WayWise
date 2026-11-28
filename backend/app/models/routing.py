@@ -35,6 +35,9 @@ class TransitDetails(BaseModel):
     line_name: str | None = None
     agency_name: str | None = None
     vehicle_type: str | None = None
+    route_short_name: str | None = None
+    headsign: str | None = None
+    stop_count: int | None = None
 
 
 class Segment(BaseModel):
@@ -42,6 +45,10 @@ class Segment(BaseModel):
     duration_seconds: int | None = None
     distance_meters: int | None = None
     transit_details: TransitDetails | None = None
+
+    start_location: Coordinates | None = None
+    end_location: Coordinates | None = None
+    encoded_polyline: str | None = None
 
 
 class Leg(BaseModel):
@@ -53,6 +60,10 @@ class Route(BaseModel):
     distance_meters: int | None = None
     legs: list[Leg] = Field(default_factory=list)
     transfer_count: int | None = None
+    
+    start_location: Coordinates | None = None
+    end_location: Coordinates | None = None
+    encoded_polyline: str | None = None
 
 
 class RouteResult(BaseModel):

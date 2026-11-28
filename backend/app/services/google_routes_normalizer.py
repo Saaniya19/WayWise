@@ -97,6 +97,9 @@ def parse_transit_details(data: dict | None) -> TransitDetails | None:
         or transit_line.get("name"),
         agency_name=agencies[0].get("name") if agencies else None,
         vehicle_type=vehicle.get("type"),
+        route_short_name=transit_line.get("nameShort"),
+        headsign=data.get("headsign"),
+        stop_count=data.get("stopCount"),
     )
 
 
@@ -111,6 +114,15 @@ def normalize_segment(data: dict[str, Any]) -> Segment:
         distance_meters=data.get("distanceMeters"),
         transit_details=parse_transit_details(
             data.get("transitDetails")
+        ),
+        start_location=parse_coordinates(
+            data.get("startLocation")
+        ),
+        end_location=parse_coordinates(
+            data.get("endLocation")
+        ),
+        encoded_polyline=(data.get("polyline") or {}).get(
+            "encodedPolyline"
         ),
     )
 
@@ -143,11 +155,22 @@ def normalize_route(data: dict[str, Any]) -> Route:
         else 0
     )
 
+    raw_legs = data.get("legs") or []
+
     return Route(
         duration_seconds=parse_duration(data.get("duration")),
         distance_meters=data.get("distanceMeters"),
         legs=legs,
         transfer_count=transfer_count,
+        start_location=parse_coordinates(
+            raw_legs[0].get("startLocation")
+        ) if raw_legs else None,
+        end_location=parse_coordinates(
+            raw_legs[-1].get("endLocation")
+        ) if raw_legs else None,
+        encoded_polyline=(data.get("polyline") or {}).get(
+            "encodedPolyline"
+        ),
     )
 
 

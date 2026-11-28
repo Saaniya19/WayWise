@@ -3,6 +3,7 @@ load_dotenv()
 
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -13,9 +14,15 @@ from app.config import GOOGLE_ROUTES_URL
 BASE_FIELDS = [
     "routes.duration",
     "routes.distanceMeters",
+    "routes.polyline.encodedPolyline",
+    "routes.legs.startLocation",
+    "routes.legs.endLocation",
     "routes.legs.steps.travelMode",
     "routes.legs.steps.staticDuration",
     "routes.legs.steps.distanceMeters",
+    "routes.legs.steps.startLocation",
+    "routes.legs.steps.endLocation",
+    "routes.legs.steps.polyline.encodedPolyline",
 ]
 
 TRANSIT_FIELDS = [
@@ -70,17 +77,21 @@ def _build_request_body(
         "computeAlternativeRoutes": True,
     }
 
+    if mode == TravelMode.DRIVE:
+        body["routingPreference"] = "TRAFFIC_AWARE"
+
     if departure_time is not None:
-        if departure_time.tzinfo is None:
+        if departure_time.utcoffset() is None:
             raise ValueError(
                 "departure_time must be timezone-aware"
             )
 
-        body["departureTime"] = (
-            departure_time.astimezone(timezone.utc)
-            .isoformat()
-            .replace("+00:00", "Z")
-        )
+        if mode in (TravelMode.DRIVE, TravelMode.TRANSIT):
+            body["departureTime"] = (
+                departure_time.astimezone(timezone.utc)
+                .isoformat()
+                .replace("+00:00", "Z")
+            )
 
     return body
 
